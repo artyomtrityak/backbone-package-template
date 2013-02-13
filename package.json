@@ -1,0 +1,24 @@
+{
+  "author": "Artyom Trityak",
+  "name": "BackbonePackage",
+  "description": "Template for package style Backbone.js + Require.js applications",
+  "version": "0.1.0",
+  "homepage": "https://github.com/artyomtrityak/backbone-package-template",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/artyomtrityak/backbone-package-template.git"
+  },
+  "engines": {
+    "node": "~0.6.10 || 0.8 || 0.9"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/testacular start test/testacular.conf.js"
+  },
+  "dependencies": {
+    "brunch": ">= 1.5"
+  },
+  "devDependencies": {
+    "coffee-script": ">= 1.4.0",
+    "testacular": ">= 0.5.8"
+  }
+}

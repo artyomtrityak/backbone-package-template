@@ -1,2 +1,1 @@
-backbone-package-template
-=========================
+Template for package style Backbone.js + Require.js applications
