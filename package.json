@@ -12,13 +12,15 @@
     "node": "~0.6.10 || 0.8 || 0.9"
   },
   "scripts": {
-    "test": "node_modules/.bin/testacular start test/testacular.conf.js"
+    "test": "node_modules/.bin/testacular start test/testacular.conf.js",
+    "compile": "node_modules/.bin/scss --watch app/assets/scss/:app/assets/css/"
   },
   "dependencies": {
-    "brunch": ">= 1.5"
   },
   "devDependencies": {
     "coffee-script": ">= 1.4.0",
-    "testacular": ">= 0.5.8"
+    "testacular": ">= 0.5.8",
+    "brunch": ">= 1.5",
+    "scss": ">= 0.2.4"
   }
 }
