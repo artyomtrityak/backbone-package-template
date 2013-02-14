@@ -12,20 +12,20 @@
     "node": "~0.6.10 || 0.8 || 0.9"
   },
   "scripts": {
-    "test": "node_modules/.bin/testacular start test/testacular.conf.js",
-    "compile": "node_modules/.bin/scss --watch app/assets/scss/:app/assets/css/"
+    "test": "node_modules/.bin/testacular start tests/testacular.conf.js",
+    "start": "node_modules/.bin/grunt run"
   },
   "dependencies": {},
   "devDependencies": {
-    "coffee-script": ">= 1.4.0",
+    "coffee-script": "~1.4.0",
     "testacular": ">= 0.5.8",
-    "brunch": ">= 1.5",
+    "brunch": "~1.5.3",
     "grunt": ">= 0.4",
     "grunt-cli": ">= 0.1.6",
-    "grunt-contrib-watch": ">= 0.2",
-    "grunt-contrib-less": "0.5.0rc7",
-    "grunt-contrib-sass": "0.2.2rc7",
-    "grunt-contrib-connect": "0.1.1rc6",
+    "grunt-contrib-watch": "~0.1.4",
+    "grunt-contrib-less": "~0.5.0rc7",
+    "grunt-contrib-sass": "~0.2.2rc7",
+    "grunt-contrib-connect": "~0.1.1rc6",
     "grunt-contrib-coffee": "~0.4.0rc7"
   }
 }
