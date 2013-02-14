@@ -3,7 +3,7 @@
 
 
 // base path, that will be used to resolve files and exclude
-basePath = '';
+basePath = '../';
 
 
 // list of files / patterns to load in the browser
@@ -12,12 +12,10 @@ files = [
   JASMINE_ADAPTER,
   REQUIRE,
   REQUIRE_ADAPTER,
-  {pattern: 'js/**/*.coffee', included: false},
-  {pattern: 'js/**/*.js', included: false, served: true, watched: true},
-  {pattern: 'libs/**/*.js', included: false, served: true, watched: true},
-  {pattern: 'tpl/**/*', included: false, served: true, watched: true},
-  {pattern: 'data/**/*', included: false, served: true, watched: true},
-  'main.js'
+  //{pattern: 'js/**/*.coffee', included: false},
+  {pattern: 'app/**/*.js', included: false, served: true, watched: true},
+  {pattern: '**/*.html', included: false, served: true, watched: true},
+  'tests/test-config.js'
 ];
 
 
@@ -73,6 +71,6 @@ captureTimeout = 60000;
 singleRun = false;
 
 // compile coffee scripts
-preprocessors = {
-    '**/*.coffee': 'coffee'
-};
+//preprocessors = {
+//    '**/*.coffee': 'coffee'
+//};

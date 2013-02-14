@@ -10,6 +10,9 @@ module.exports = function(grunt) {
 		},
 
 		coffee: {
+			options: {
+				bare: true
+			},
 			glob_to_multiple: {
 				expand: true,
 				cwd: '.',
@@ -27,10 +30,15 @@ module.exports = function(grunt) {
 		},*/
 
 		sass: {
-			dist: {
-				files: {
-					'app/assets/css/main.css': 'app/assets/scss/*.scss'
-				}
+			options: {
+				noCache: true
+			},
+			glob_to_multiple: {
+				expand: true,
+				cwd: 'app/assets/scss',
+				src: ['*.scss', '*/**/*.scss'],
+				dest: 'app/assets/css',
+				ext: '.css'
 			}
 		},
 
@@ -41,7 +49,7 @@ module.exports = function(grunt) {
 				'tests/**/*.coffee',
 				'generators/**/*.coffee'
 			],
-			tasks: ['sass coffee']
+			tasks: ['sass', 'coffee']
 		}
 	});
 
