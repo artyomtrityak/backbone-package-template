@@ -1,0 +1,26 @@
+{
+  "files": [
+    {
+      "from": "package.hbs",
+      "to": "app/packages/{{name}}/main.js"
+    },
+    {
+      "from": "package.hbs",
+      "to": "app/packages/{{name}}/model.js"
+    },
+    {
+      "from": "package.hbs",
+      "to": "app/packages/{{name}}/view.js"
+    },
+    {
+      "from": "package.hbs",
+      "to": "app/packages/{{name}}/collection.js"
+    }
+  ],
+  "dependencies": [
+  	{
+  		"name": "test",
+  		"params": "{{name}}"
+		}
+  ]
+}

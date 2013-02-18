@@ -8,14 +8,16 @@ basePath = '../';
 
 // list of files / patterns to load in the browser
 files = [
-  JASMINE,
-  JASMINE_ADAPTER,
-  REQUIRE,
-  REQUIRE_ADAPTER,
-  //{pattern: 'js/**/*.coffee', included: false},
+  //JASMINE,
+  //JASMINE_ADAPTER,
+  MOCHA,
+  MOCHA_ADAPTER,
+  {pattern: 'tests/vendor/*.js', included: true, served: true, watched: true},
+  {pattern: 'app/assets/js/require-2.1.4.js', included: true, served: true, watched: true},
   {pattern: 'app/**/*.js', included: false, served: true, watched: true},
-  {pattern: '**/*.html', included: false, served: true, watched: true},
-  'tests/test-config.js'
+  //{pattern: '**/*.html', included: false, served: true, watched: true},
+  'tests/test-config.js',
+  {pattern: 'tests/spec/**/*.js', included: true, served: true, watched: true}
 ];
 
 

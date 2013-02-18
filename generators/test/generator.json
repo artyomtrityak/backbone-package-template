@@ -1,0 +1,21 @@
+{
+  "files": [
+    {
+      "from": "test.hbs",
+      "to": "tests/spec/{{name}}/main.js"
+    },
+    {
+      "from": "test.hbs",
+      "to": "tests/spec/{{name}}/model.js"
+    },
+    {
+      "from": "test.hbs",
+      "to": "tests/spec/{{name}}/view.js"
+    },
+    {
+      "from": "test.hbs",
+      "to": "tests/spec/{{name}}/collection.js"
+    }
+  ],
+  "dependencies": []
+}

@@ -1,0 +1,13 @@
+{
+  "files": [
+    {
+      "from": "generator.json.hbs",
+      "to": "generators/{{name}}/generator.json"
+    },
+    {
+      "from": "generated_file.hbs",
+      "to": "generators/{{name}}/{{name}}.hbs"
+    }
+  ],
+  "dependencies": []
+}
