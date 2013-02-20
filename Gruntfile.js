@@ -50,16 +50,24 @@ module.exports = function(grunt) {
 				'generators/**/*.coffee'
 			],
 			tasks: ['sass', 'coffee']
+		},
+
+		testacular: {
+			unit: {
+				options: {
+					configFile: 'tests/testacular.conf.js'
+				}
+			}
 		}
 	});
 
-	//grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-coffee');
+	grunt.loadNpmTasks('grunt-testacular');
 	
-	// Setip tasks
-	grunt.registerTask('run', ['connect', 'watch']);
+	// Setip tasks, wanch should be last
+	grunt.registerTask('run', ['connect', 'testacular', 'watch']);
 	grunt.registerTask('default', ['run']);
 };

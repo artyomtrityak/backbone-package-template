@@ -19,7 +19,7 @@ describe('Application', function() {
 			var Application = new app.App();
 			expect(Application).to.have.property('routes');
 			expect(Application).to.have.property('unknownRoute');
-
+			expect(Application.unknownRoute).to.be.a('function');
 			done();
 	});
 

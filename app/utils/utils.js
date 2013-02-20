@@ -8,7 +8,7 @@ define(['exports'], function (exports) {
 			_.extend(packagesRoutes, packageEl.routes);
 			return _.extend(methods, packageEl);
 		}, packagesMethods);
-		
+
 		delete packagesMethods.routes;
 
 		return {

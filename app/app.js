@@ -13,7 +13,7 @@ define(['exports', 'module', 'server'], function (exports, module, server) {
 		},
 
 		unknownRoute: function () {
-			console.log('unknown');
+			
 		}
 	});
 });
