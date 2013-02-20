@@ -12,4 +12,4 @@ Template for package style Backbone.js + Require.js applications
 
 - __npm run-script test__ for running testacular server
 
-- __node_modules/.bin/brunch generate package <package name>__ for generating 
+- __node_modules/.bin/brunch generate package package_name__ for generating 
