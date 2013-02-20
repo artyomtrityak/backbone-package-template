@@ -2,7 +2,7 @@ Template for package style Backbone.js + Require.js applications
 
 # Requirements
 
-- install ruby and __gem install__ sass
+- install ruby and __gem install sass__
 
 # Command line
 
@@ -12,4 +12,4 @@ Template for package style Backbone.js + Require.js applications
 
 - __npm run-script test__ for running testacular server
 
-- __node_modules/.bin/brunch generate package package_name__ for generating 
+- __node_modules/.bin/brunch generate package package_name__ for generating package and tests for it
