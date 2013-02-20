@@ -1,7 +1,7 @@
 {
   "files": [
     {
-      "from": "package.hbs",
+      "from": "main.hbs",
       "to": "app/packages/{{name}}/main.js"
     },
     {

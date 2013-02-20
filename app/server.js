@@ -7,13 +7,13 @@ define(['exports', 'sinon'], function (exports) {
 		server.autoRespond = true;
 		server.autoRespondAfter = 1000;
 
-		server.respondWith("GET", "/test123",
+		server.respondWith("GET", "/test",
 			[200, { "Content-Type": "application/json" },
 			'[{ "id": 12, "comment": "Hey there" }]']
 		);
 
 		$.ajax({
-			url: "/test123",
+			url: "/test",
 			success: function () {
 				console.log(arguments);
 			}

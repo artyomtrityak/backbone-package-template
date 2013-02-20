@@ -47,10 +47,10 @@ require.config({
 		'bootstrap': 'assets/js/bootstrap',
 		'handlebars': 'assets/js/handlebars',
 		'sinon': 'assets/js/sinon-1.5.2'
-	}//,
+	},
 
 	/**
 	* This is the packages list we support. main.js file is auto-called
 	*/
-	//packages: ['apps/auth', 'apps/services', 'apps/chat', 'apps/payment']
+	packages: ['packages/demo']
 });

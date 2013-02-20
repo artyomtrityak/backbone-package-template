@@ -12,8 +12,8 @@ define(['exports'], function (exports) {
 		delete packagesMethods.routes;
 
 		return {
-			packagesMethods: packagesMethods,
-			packagesRoutes: packagesRoutes
+			methods: packagesMethods,
+			routes: packagesRoutes
 		};
 	};
 	

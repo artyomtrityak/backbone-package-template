@@ -1,6 +1,12 @@
 var expect = chai.expect;
 
 describe('Test', function() {
+	beforeEach(function (done) {
+		require([], function () {
+			done();
+		});
+	});
+
 	it('expect something', function(done){
 		done();
 	});
