@@ -9,7 +9,7 @@ define(['exports', 'sinon'], function (exports) {
 
 		server.respondWith("GET", "/test",
 			[200, { "Content-Type": "application/json" },
-			'[{ "id": 12, "comment": "Hey there" }]']
+			'{ "id": 12, "comment": "Hey" }']
 		);
 
 		$.ajax({

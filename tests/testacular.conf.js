@@ -17,7 +17,7 @@ files = [
 
   {pattern: 'app/*.js', included: false, served: true, watched: true},
   {pattern: 'app/**/*.js', included: false, served: true, watched: true},
-  //{pattern: '**/*.html', included: false, served: true, watched: true},
+  {pattern: 'app/**/*.html', included: false, served: true, watched: true},
   
   {pattern: 'tests/spec/**/*.js', included: true, served: true, watched: true}
 ];
@@ -63,7 +63,7 @@ autoWatch = true;
 // - Safari (only Mac)
 // - PhantomJS
 // - IE (only Windows)
-browsers = ['Chrome'];
+browsers = ['Chrome', 'Firefox'];
 
 
 // If browser does not capture in given timeout [ms], kill it
