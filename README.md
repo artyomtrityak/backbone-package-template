@@ -4,12 +4,20 @@ Template for package style Backbone.js + Require.js applications
 
 - install ruby and __gem install sass__
 
+# Installation
+
+I recommend use __brunch__ for creating new project. Also it allows use Backbone Package generators
+
+- __npm -g install brunch__
+
+- brunch new your_project_folder github://artyomtrityak/backbone-package-template
+
 # Command line
 
 - __npm install__ for install deps
 
-- __npm run-script start__ for running grunt server: coffee, scss processing, static files serving and tests
+- __npm start__ for running grunt server: coffee, scss processing, static files serving and testacular tests
 
-- __npm run-script test__ for running testacular server
+- __npm test__ for running tests once
 
-- __node_modules/.bin/brunch generate package package_name__ for generating package and tests for it
+- __node_modules/.bin/brunch generate package your_package_name__ for generating package and tests for it

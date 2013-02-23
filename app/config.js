@@ -8,7 +8,7 @@ require.config({
 
 	config: {
 		'app': {
-			'dev': true
+			'fakeServer': true
 		}
 	},
 

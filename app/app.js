@@ -5,12 +5,13 @@ define(function (require, exports, module) {
 
 	var demoPackage = require('packages/demo'),
 			Utils = require('utils/utils'),
+			
 			packages = Utils.getPackagesRoutes([
 				demoPackage.Controller
 			]);
 
 
-	if (module.config().dev) {
+	if (module.config().fakeServer) {
 		var server = require('server');
 		server.start();
 	}

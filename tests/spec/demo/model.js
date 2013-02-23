@@ -34,6 +34,9 @@ describe('Test', function() {
 
 		viewIns.model.set('email', 'aaaa');
 		expect(m.validate()).to.be.a('object');
+		viewIns.model.set('email', 'aaaa@aaa.cc');
+		expect(m.validate()).to.be.equal(undefined);
+
 
 		modelIns.fetch({
 			success: function () {

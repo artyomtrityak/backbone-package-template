@@ -5,19 +5,12 @@ define(['exports', 'sinon'], function (exports) {
 	exports.start = function () {
 		var server = sinon.fakeServer.create();
 		server.autoRespond = true;
-		server.autoRespondAfter = 1000;
+		server.autoRespondAfter = 50;
 
 		server.respondWith("GET", "/test",
 			[200, { "Content-Type": "application/json" },
 			'{ "id": 12, "comment": "Hey" }']
 		);
-
-		$.ajax({
-			url: "/test",
-			success: function () {
-				console.log(arguments);
-			}
-		});
 	};
 
 });
