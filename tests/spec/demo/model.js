@@ -1,4 +1,4 @@
-/*var expect = chai.expect;
+var expect = chai.expect;
 
 describe('Test', function() {
 	var model, view;
@@ -49,4 +49,4 @@ describe('Test', function() {
 
 		
 	});
-});*/
+});

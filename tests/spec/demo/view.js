@@ -1,4 +1,4 @@
-/*var expect = chai.expect;
+var expect = chai.expect;
 
 describe('Test', function() {
 	var view;
@@ -44,4 +44,4 @@ describe('Test', function() {
 		expect(viewIns.showNotification()).to.be.a('object');
 		expect(viewIns.render().$el.html()).to.contain('Hello, demo!');
 	});
-}); */
+});

@@ -1,4 +1,4 @@
-/*var expect = chai.expect;
+var expect = chai.expect;
 
 describe('Application', function() {
 	var app;
@@ -23,4 +23,4 @@ describe('Application', function() {
 			done();
 	});
 
-});*/
+});
