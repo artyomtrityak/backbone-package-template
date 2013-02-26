@@ -1,5 +1,7 @@
 Template for package style Backbone.js + Require.js applications ![Build status](https://api.travis-ci.org/artyomtrityak/backbone-package-template.png)
 
+[![Build Status](https://travis-ci.org/artyomtrityak/backbone-package-template.png)](https://travis-ci.org/artyomtrityak/backbone-package-template)
+
 # Requirements
 
 - install ruby
