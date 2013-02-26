@@ -1,4 +1,4 @@
-Template for package style Backbone.js + Require.js applications
+Template for package style Backbone.js + Require.js applications ![Build status](https://api.travis-ci.org/artyomtrityak/backbone-package-template.png)
 
 # Requirements
 
