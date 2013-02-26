@@ -2,7 +2,8 @@ Template for package style Backbone.js + Require.js applications
 
 # Requirements
 
-- install ruby and __gem install sass__
+- install ruby
+- __gem install sass__
 
 # Installation
 
@@ -10,7 +11,7 @@ I recommend use __brunch__ for creating new project. Also it allows use Backbone
 
 - __npm -g install brunch__
 
-- brunch new your_project_folder github://artyomtrityak/backbone-package-template
+- __brunch new your_project_folder github://artyomtrityak/backbone-package-template__
 
 # Command line
 

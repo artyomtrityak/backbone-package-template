@@ -12,7 +12,7 @@
     "node": "~0.6.10 || 0.8 || 0.9"
   },
   "scripts": {
-    "test": "node_modules/.bin/testacular start tests/testacular.conf.js",
+    "test": "node_modules/.bin/testacular start tests/testacular.conf.js --single-run",
     "start": "node_modules/.bin/grunt run"
   },
   "dependencies": {},
