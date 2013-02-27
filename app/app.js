@@ -1,7 +1,6 @@
 
 define(function(require, exports, module) {
-  var Utils, appState, demoPackage, packages, server;
-  appState = require('shared/app_state');
+  var Utils, demoPackage, packages, server;
   demoPackage = require('packages/demo');
   Utils = require('shared/utils');
   packages = Utils.getPackagesRoutes([demoPackage.Controller]);

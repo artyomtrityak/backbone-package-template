@@ -9,7 +9,7 @@ define(function() {
     set: function(key, val) {
       return state[key] = val;
     },
-    "delete": function(key) {
+    del: function(key) {
       return delete state[key];
     }
   };

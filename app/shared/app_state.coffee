@@ -10,5 +10,5 @@ define ->
 	set: (key, val) ->
 		state[key] = val
 
-	delete: (key) ->
+	del: (key) ->
 		delete state[key]

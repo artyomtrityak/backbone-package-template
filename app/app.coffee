@@ -1,7 +1,4 @@
 define (require, exports, module) ->
-
-	# shared application state
-	appState = require 'shared/app_state'
 	
 	# Packages loading	
 	demoPackage = require 'packages/demo'
