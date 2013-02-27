@@ -16,11 +16,11 @@ define [
 				response: '{"id": 12, "comment": "Hey"}'
 			}
 		]
-		_.each(requests, (req) ->
+		for req in requests then do (req) ->
 			server.respondWith req.method, req.route, [
 				200
 				{'Content-Type': 'application/json'}
 				req.response
 			]
-		)
+		return
 	return
