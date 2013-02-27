@@ -4,7 +4,7 @@ describe('Utils', function() {
 	var utils;
 
 	beforeEach(function (done) {
-		require(['utils/utils'], function (pUtils) {
+		require(['shared/utils'], function (pUtils) {
 			utils = pUtils;
 			done();
 		});

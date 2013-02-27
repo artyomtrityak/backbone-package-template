@@ -5,6 +5,12 @@ define (require, exports, module)->
 	exports.Controller = 
 		routes:
 			'demo': 'demo'
+		
+		before: 
+			'demo': -> @onBefore()
+
+		onBefore: ->
+			console.log 'before'
 
 		demo: ->
 			console.log 'demo'

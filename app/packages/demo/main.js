@@ -7,6 +7,14 @@ define(function(require, exports, module) {
     routes: {
       'demo': 'demo'
     },
+    before: {
+      'demo': function() {
+        return this.onBefore();
+      }
+    },
+    onBefore: function() {
+      return console.log('before');
+    },
     demo: function() {
       var viewIns;
       console.log('demo');

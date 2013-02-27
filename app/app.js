@@ -2,7 +2,7 @@
 define(function(require, exports, module) {
   var Utils, demoPackage, packages, server;
   demoPackage = require('packages/demo');
-  Utils = require('utils/utils');
+  Utils = require('shared/utils');
   packages = Utils.getPackagesRoutes([demoPackage.Controller]);
   if (module.config().fakeServer) {
     server = require('server');

@@ -4,7 +4,7 @@ define (require, exports, module)->
 	demoPackage = require 'packages/demo'
 
 	#Utils and other
-	Utils = require 'utils/utils'
+	Utils = require 'shared/utils'
 
 	packages = Utils.getPackagesRoutes [
 		demoPackage.Controller
