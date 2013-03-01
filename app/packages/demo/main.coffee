@@ -1,13 +1,14 @@
 define (require, exports, module)->
 	view = require './view'
 	model = require './model'
+	DefaultController = require 'shared/default_controller'
 
-	exports.Controller = 
+	exports.Controller = class Controller extends DefaultController
 		routes:
-			'demo': 'demo'
-		
+			'demo2': 'demo'
+
 		before: 
-			'demo': -> @onBefore()
+			'demo': => @onBefore()
 
 		onBefore: ->
 			console.log 'before'

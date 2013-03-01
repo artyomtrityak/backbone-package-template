@@ -2,11 +2,15 @@ define (require, exports, module) ->
 	
 	class Controller
 		constructor: ->
-			console.log "aa"
 
 		beforeRequest: ->
 			console.log "before"
 
+		afterRequest: ->
+			console.log 'after'
+
 		destructor: ->
 			console.log "destructor2"
+
+
 

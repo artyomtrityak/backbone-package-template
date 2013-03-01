@@ -1,17 +1,15 @@
 
 define(['exports'], function(exports) {
-  exports.getPackagesRoutes = function(packages) {
-    var packagesMethods, packagesRoutes;
-    packagesMethods = {};
-    packagesRoutes = {};
-    _.reduce(packages, function(methods, packageEl) {
-      _.extend(packagesRoutes, packageEl.routes);
-      return _.extend(methods, packageEl);
-    }, packagesMethods);
-    delete packagesMethods.routes;
-    return {
-      methods: packagesMethods,
-      routes: packagesRoutes
-    };
+  exports.bindRoutes = function(Router, packages) {
+    var methodName, packageEl, pkg, route, _i, _len, _ref;
+    for (_i = 0, _len = packages.length; _i < _len; _i++) {
+      packageEl = packages[_i];
+      pkg = new packageEl();
+      _ref = pkg.routes;
+      for (route in _ref) {
+        methodName = _ref[route];
+        Router.route(route, methodName, pkg[methodName]);
+      }
+    }
   };
 });

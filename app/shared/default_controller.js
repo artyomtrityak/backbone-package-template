@@ -3,12 +3,14 @@ define(function(require, exports, module) {
   var Controller;
   return Controller = (function() {
 
-    function Controller() {
-      console.log("aa");
-    }
+    function Controller() {}
 
     Controller.prototype.beforeRequest = function() {
       return console.log("before");
+    };
+
+    Controller.prototype.afterRequest = function() {
+      return console.log('after');
     };
 
     Controller.prototype.destructor = function() {

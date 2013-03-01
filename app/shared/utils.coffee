@@ -1,19 +1,11 @@
 define ['exports'], (exports)->
 	
-	exports.getPackagesRoutes = (packages)->
-		packagesMethods = {}
-		packagesRoutes = {}
+	exports.bindRoutes = (Router, packages)->
+		for packageEl in packages
 
-		_.reduce packages, (methods, packageEl)->
-			_.extend packagesRoutes, packageEl.routes
-			_.extend(methods, packageEl)
-		, packagesMethods
+			pkg = new packageEl()
 
-		delete packagesMethods.routes
-
-		{
-			methods: packagesMethods
-			routes: packagesRoutes
-		}
-
-	return;
+			for route, methodName of pkg.routes
+				Router.route route, methodName, pkg[methodName]
+		return
+	return

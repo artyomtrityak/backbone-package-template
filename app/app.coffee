@@ -6,22 +6,19 @@ define (require, exports, module)->
 	#Utils and other
 	Utils = require 'shared/utils'
 
-	packages = Utils.getPackagesRoutes [
-		demoPackage.Controller
-	]
-
 	if module.config().fakeServer
 		server = require 'server'
 		server.start()
 
-	exports.App = Backbone.Router.extend _.extend {}, 
-		packages.methods,
-		{
-			routes: _.extend {},
-				packages.routes,
-				{
-					'*other': 'unknownRoute'
-				}
+	exports.App = Backbone.Router.extend {
+			routes:
+				'*other': 'unknownRoute'
+
+			initialize: ->
+				Utils.bindRoutes @, [
+					demoPackage.Controller
+				]
+			
 			unknownRoute:->
 				console.log 'unknown'
 		}
