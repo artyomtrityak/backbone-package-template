@@ -18,3 +18,4 @@ define (require, exports, module) ->
 				Utils.bindRoutes @, [
 					demoPackage.Controller
 				]
+	}

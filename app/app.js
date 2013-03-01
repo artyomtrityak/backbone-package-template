@@ -7,15 +7,12 @@ define(function(require, exports, module) {
     server = require('server');
     server.start();
   }
-  exports.App = Backbone.Router.extend({
+  return exports.App = Backbone.Router.extend({
     routes: {
       '*other': 'unknownRoute'
     },
     initialize: function() {
       return Utils.bindRoutes(this, [demoPackage.Controller]);
-    },
-    unknownRoute: function() {
-      return console.log('unknown');
     }
   });
 });
