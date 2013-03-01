@@ -1,6 +1,6 @@
 expect = chai.expect
 
-describe 'Test', ->
+describe 'Test organization User model', ->
 	dep = null
 
 	User = null

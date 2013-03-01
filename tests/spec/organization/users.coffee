@@ -1,6 +1,6 @@
 expect = chai.expect
 
-describe 'Test', ->
+describe 'Test organization Users collection', ->
 	Users = null
 
 	beforeEach (done) ->
@@ -22,7 +22,6 @@ describe 'Test', ->
 					user = users.get(id)
 					expect(user).to.be.an 'object'
 					expect(user.get('id')).to.be.equal id
-					
 				done()
 			error: (e) ->
 				console.log 'Users FETCH ERROR: ', e
