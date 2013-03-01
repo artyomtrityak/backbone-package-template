@@ -1,10 +1,7 @@
 # global define: true, _: true, console:true, require: true, Backbone: true, $: true
 
-define [
-	'exports'
-	# anonymous
-	'sinon'
-], (exports) ->
+define (require, exports, module) ->
+	require('sinon')
 	exports.start = ->
 		server = sinon.fakeServer.create()
 		server.autoRespond = on

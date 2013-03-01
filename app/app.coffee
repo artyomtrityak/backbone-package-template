@@ -1,8 +1,8 @@
-define (require, exports, module)->
-
+define (require, exports, module) ->
+	
 	# Packages loading	
 	demoPackage = require 'packages/demo'
-
+	
 	#Utils and other
 	Utils = require 'shared/utils'
 
@@ -18,8 +18,3 @@ define (require, exports, module)->
 				Utils.bindRoutes @, [
 					demoPackage.Controller
 				]
-			
-			unknownRoute:->
-				console.log 'unknown'
-		}
-	return
