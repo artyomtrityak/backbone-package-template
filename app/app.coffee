@@ -18,4 +18,8 @@ define (require, exports, module) ->
 				Utils.bindRoutes @, [
 					demoPackage.Controller
 				]
+
+			unknownRoute: ->
+				console.log 'unknown'
 	}
+	return
