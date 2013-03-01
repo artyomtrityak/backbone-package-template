@@ -4,6 +4,7 @@ define (require, exports, module)->
 	BaseController = require 'shared/base_controller'
 
 	exports.Controller = class Controller extends BaseController
+		name: 'demo'
 		routes:
 			'demo2': 'demo'
 			'demo/:id': 'demo'

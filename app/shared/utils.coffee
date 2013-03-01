@@ -6,11 +6,11 @@ define ['exports'], (exports)->
 
 			for route, method of pkg.routes then do (pkg, route, method) ->
 				Router.route route, method, ->
-					args = Array.prototype.slice.call arguments;
-					args.unshift method
+					argsWithDetails = Array.prototype.slice.call arguments;
+					argsWithDetails.unshift method
 					
-					pkg.onBeforeRequest.apply(pkg, args) 
-					pkg[method].apply(pkg, args) 
-					pkg.onAfterRequest.apply(pkg, args) 
+					pkg.onBeforeRequest.apply pkg, argsWithDetails
+					pkg[method].apply pkg, arguments
+					pkg.onAfterRequest.apply pkg, argsWithDetails
 		return
 	return

@@ -15,6 +15,8 @@ I recommend use __brunch__ for creating new project. Also it allows use Backbone
 
 - __brunch new your_project_folder github://artyomtrityak/backbone-package-template__
 
+- open __http://localhost:8080__
+
 # Command line
 
 - __npm install__ for install deps

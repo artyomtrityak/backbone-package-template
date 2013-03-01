@@ -1,7 +1,7 @@
 {
   "files": [
     {
-      "from": "package.coffee.hbs",
+      "from": "main.coffee.hbs",
       "to": "app/packages/{{name}}/main.coffee"
     },
     {
