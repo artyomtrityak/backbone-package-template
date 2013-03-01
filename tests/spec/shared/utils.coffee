@@ -36,8 +36,8 @@ describe 'Utils', ->
 
 		expect(Router.route.callCount).to.be.equals 3
 
-		expect(Router.route.calledWith 'test555', 'test5', func).to.be.ok
-		expect(Router.route.calledWith 'test666', 'test6', func).to.be.ok
+		expect(Router.route.calledWithMatch 'test555', 'test5').to.be.ok
+		expect(Router.route.calledWithMatch 'test666', 'test6').to.be.ok
 
 
 

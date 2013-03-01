@@ -3,14 +3,16 @@ define (require, exports, module) ->
 	class Controller
 		constructor: ->
 
-		beforeRequest: ->
+		onBeforeRequest: ->
 			console.log "before"
+			console.log arguments
 
-		afterRequest: ->
+		onAfterRequest: ->
 			console.log 'after'
+			console.log arguments
 
 		destructor: ->
-			console.log "destructor2"
+			console.log "destructor"
 
 
 

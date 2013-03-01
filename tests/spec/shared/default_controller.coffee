@@ -11,7 +11,7 @@ describe "Test default controller", ->
 		expect(s.Cont).to.be.a 'function'
 
 		contIns = new s.Cont
-		expect(contIns).to.have.property 'beforeRequest'
-		expect(contIns).to.have.property 'afterRequest'
+		expect(contIns).to.have.property 'onBeforeRequest'
+		expect(contIns).to.have.property 'onAfterRequest'
 		expect(contIns).to.have.property 'destructor'
 

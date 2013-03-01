@@ -6,12 +6,7 @@ define (require, exports, module)->
 	exports.Controller = class Controller extends DefaultController
 		routes:
 			'demo2': 'demo'
-
-		before: 
-			'demo': => @onBefore()
-
-		onBefore: ->
-			console.log 'before'
+			'demo/:id': 'demo'
 
 		demo: ->
 			console.log 'demo'
