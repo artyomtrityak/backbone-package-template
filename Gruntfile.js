@@ -17,6 +17,7 @@ module.exports = function(grunt) {
 				expand: true,
 				cwd: '.',
 				src: [
+					'app/*.coffee',
 					'app/**/*.coffee',
 					'tests/**/*.coffee',
 					'tests/*.coffee',
