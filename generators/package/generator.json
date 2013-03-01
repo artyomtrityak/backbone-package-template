@@ -1,20 +1,20 @@
 {
   "files": [
     {
-      "from": "main.hbs",
-      "to": "app/packages/{{name}}/main.js"
+      "from": "package.coffee.hbs",
+      "to": "app/packages/{{name}}/main.coffee"
     },
     {
-      "from": "package.hbs",
-      "to": "app/packages/{{name}}/model.js"
+      "from": "package.coffee.hbs",
+      "to": "app/packages/{{name}}/model.coffee"
     },
     {
-      "from": "package.hbs",
-      "to": "app/packages/{{name}}/view.js"
+      "from": "package.coffee.hbs",
+      "to": "app/packages/{{name}}/view.coffee"
     },
     {
-      "from": "package.hbs",
-      "to": "app/packages/{{name}}/collection.js"
+      "from": "package.coffee.hbs",
+      "to": "app/packages/{{name}}/collection.coffee"
     }
   ],
   "dependencies": [

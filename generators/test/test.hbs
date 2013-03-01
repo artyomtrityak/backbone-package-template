@@ -1,13 +1,12 @@
-var expect = chai.expect;
+expect = chai.expect
 
-describe('Test', function() {
-	beforeEach(function (done) {
-		require([], function () {
-			done();
-		});
-	});
+describe 'Test', ->
+	dep = null
 
-	it('expect something', function(done){
-		done();
-	});
-});
+	beforeEach (done) ->
+		require [], (_dep) ->
+			dep = _dep
+			done()
+
+	it 'should be test', (done) ->
+		done()

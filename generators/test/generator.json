@@ -2,19 +2,19 @@
   "files": [
     {
       "from": "test.hbs",
-      "to": "tests/spec/{{name}}/main.js"
+      "to": "tests/spec/{{name}}/main.coffee"
     },
     {
       "from": "test.hbs",
-      "to": "tests/spec/{{name}}/model.js"
+      "to": "tests/spec/{{name}}/model.coffee"
     },
     {
       "from": "test.hbs",
-      "to": "tests/spec/{{name}}/view.js"
+      "to": "tests/spec/{{name}}/view.coffee"
     },
     {
       "from": "test.hbs",
-      "to": "tests/spec/{{name}}/collection.js"
+      "to": "tests/spec/{{name}}/collection.coffee"
     }
   ],
   "dependencies": []
