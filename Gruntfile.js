@@ -16,7 +16,13 @@ module.exports = function(grunt) {
 			glob_to_multiple: {
 				expand: true,
 				cwd: '.',
-				src: ['app/**/*.coffee', 'tests/**/*.coffee', 'generators/**/*.coffee'],
+				src: [
+					'app/*.coffee',
+					'app/**/*.coffee',
+					'tests/**/*.coffee',
+					'tests/*.coffee',
+					'generators/**/*.coffee'
+				],
 				dest: '.',
 				ext: '.js'
 			}
@@ -55,7 +61,7 @@ module.exports = function(grunt) {
 		testacular: {
 			unit: {
 				options: {
-					configFile: 'tests/testacular.conf.js'
+					configFile: 'tests/testacular-config.js'
 				}
 			}
 		}
