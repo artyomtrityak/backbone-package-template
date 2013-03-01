@@ -38,6 +38,7 @@ describe 'Utils', ->
 
 		expect(Router.route.calledWithMatch 'test555', 'test5').to.be.ok
 		expect(Router.route.calledWithMatch 'test666', 'test6').to.be.ok
+		expect(Router.route.calledWithMatch 'test5551', 'test51').to.be.ok
 
 
 
