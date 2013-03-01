@@ -1,7 +1,6 @@
 expect = chai.expect
 
 describe 'Test organization User model', ->
-	dep = null
 
 	User = null
 
@@ -11,16 +10,16 @@ describe 'Test organization User model', ->
 			done()
 
 	it 'expect that the model fetches the data', (done) ->
-		user_id = 7
+		userId = 7
 		user = new User
-				id: user_id
+				id: userId
 		expect(user).to.be.an 'object'
 		expect(user).to.have.property 'fetch'
 		expect(user.fetch).to.be.a 'function'
 		user.fetch
 			success: (u) ->
 				expect(u).to.be.an 'object'
-				expect(u.get('id')).to.be.equal user_id
+				expect(u.get('id')).to.be.equal userId
 				done()
 			error: (e) ->
 				console.log 'User FETCH ERROR: ', e
