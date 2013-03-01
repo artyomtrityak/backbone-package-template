@@ -1,9 +1,9 @@
 define (require, exports, module)->
 	view = require './view'
 	model = require './model'
-	DefaultController = require 'shared/default_controller'
+	BaseController = require 'shared/base_controller'
 
-	exports.Controller = class Controller extends DefaultController
+	exports.Controller = class Controller extends BaseController
 		routes:
 			'demo2': 'demo'
 			'demo/:id': 'demo'

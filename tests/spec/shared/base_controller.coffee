@@ -3,7 +3,7 @@ expect = chai.expect
 describe "Test default controller", ->
 	s = {}
 	beforeEach (done) ->
-		require ['shared/default_controller'], (_Cont)->
+		require ['shared/base_controller'], (_Cont)->
 			s.Cont = _Cont
 			done()
 
