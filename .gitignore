@@ -6,12 +6,15 @@
 node_modules
 .DS_Store
 
+npm-debug.log
+
 app/*.js
 app/*/*.js
 app/*/*/*.js
 app/*/*/*/*.js
 app/*/*/*/*/*.js
 
+tests/*.js
 tests/spec/*.js
 tests/spec/*/*.js
 tests/spec/*/*/*.js
