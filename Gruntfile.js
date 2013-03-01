@@ -66,8 +66,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-coffee');
 	grunt.loadNpmTasks('grunt-testacular');
-	
+
 	// Setip tasks, wanch should be last
-	grunt.registerTask('run', ['connect', 'testacular', 'watch']);
+	grunt.registerTask('run', ['coffee', 'connect', 'testacular', 'watch']);
 	grunt.registerTask('default', ['run']);
 };
