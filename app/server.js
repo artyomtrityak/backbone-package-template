@@ -1,5 +1,6 @@
 
-define(['exports', 'sinon'], function(exports) {
+define(function(require, exports, module) {
+  require('sinon');
   exports.start = function() {
     var req, requests, server, _fn, _i, _len;
     server = sinon.fakeServer.create();
