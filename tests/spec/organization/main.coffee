@@ -1,5 +1,6 @@
 expect = chai.expect
 
+
 describe 'Test users controller', ->
 	dep = null
 
