@@ -1,3 +1,3 @@
 define (require, exports, module) ->
-	Backbone.Model.extend
+	class User extends Backbone.Model
 		urlRoot: '/organization/user'

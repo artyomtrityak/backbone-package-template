@@ -1,6 +1,6 @@
 define (require, exports, module) ->
 	User = require './user'
 
-	Backbone.Collection.extend
+	class Users extends Backbone.Collection
 		model: User
 		url: '/organization/users'
