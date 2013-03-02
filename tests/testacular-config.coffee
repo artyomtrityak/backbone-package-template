@@ -15,6 +15,7 @@ files = [
 	'app/config.js'
 	'tests/test-config.js'
 
+	{pattern: 'app/assets/json/*.json', included: false, served: true, watched: true}
 	{pattern: 'app/*.js', included: false, served: true, watched: true}
 	{pattern: 'app/**/*.js', included: false, served: true, watched: true}
 	{pattern: 'app/**/*.html', included: false, served: true, watched: true}
