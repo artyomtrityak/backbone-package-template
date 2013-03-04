@@ -1,6 +1,7 @@
 define (require, exports, module) ->
-	view = require './view'
-	model = require './model'
+
+	UsersView = require './users_view'
+	UsersCollection = require './users_collection'
 	BaseController = require 'shared/base_controller'
 
 	exports.Controller = class Controller extends BaseController
@@ -13,6 +14,16 @@ define (require, exports, module) ->
 
 		showUsersList: ->
 			console.log 'show list'
+			users = new UsersCollection
+			users.fetch
+				success: @_renderUsers
+			return users
+
+		_renderUsers: (users) ->
+			@currentView = new UsersView
+				collection: users
+			$('#demo-box').html @currentView.render().$el
+			return @currentView
 
 		addUser: ->
 			console.log 'add user'

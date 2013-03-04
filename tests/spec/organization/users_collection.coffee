@@ -4,7 +4,7 @@ describe 'Test organization Users collection', ->
 	Users = null
 
 	beforeEach (done) ->
-		require ['packages/organization/users'], (_Users) ->
+		require ['packages/organization/users_collection'], (_Users) ->
 			Users = _Users
 			done()
 
