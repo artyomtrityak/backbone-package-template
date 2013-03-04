@@ -4,8 +4,7 @@ define (require, exports, module) ->
 	UserView = require './user_view'
 	BaseView = require 'shared/base_view'
 
-	#class UsersView extends BaseView
-	UsersView = BaseView.extend
+	class UsersView extends BaseView
 		
 		template: _.template tpl
 		collection: null
