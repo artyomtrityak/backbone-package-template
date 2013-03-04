@@ -5,7 +5,7 @@ describe 'Test organization User model', ->
 	User = null
 
 	beforeEach (done) ->
-		require ['packages/organization/user'], (_User) ->
+		require ['packages/organization/user_model'], (_User) ->
 			User = _User
 			done()
 

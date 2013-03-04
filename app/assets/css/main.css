@@ -1,3 +1,6 @@
 body {
   padding-top: 2px;
   padding-bottom: 40px; }
+
+.table-users td {
+  line-height: 36px; }
