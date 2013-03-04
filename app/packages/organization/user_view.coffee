@@ -10,5 +10,5 @@ define (require, exports, module) ->
 		template: _.template tpl
 
 		render: ->
-			@$el.html @template @model.toJSON()
+			@$el.html @template data: @model.toJSON()
 			return @

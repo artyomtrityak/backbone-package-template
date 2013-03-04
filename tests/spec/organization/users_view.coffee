@@ -13,7 +13,7 @@ describe 'Test User View', ->
 		done()
 
 	it 'should allow to render template', (done) ->
-		view = new UsersView;
+		view = new UsersView
 		expect(view).to.have.property 'render'
 		expect(view.render).to.be.a 'function'
 		expect(view.render()).to.be.equal view

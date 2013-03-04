@@ -4,14 +4,13 @@ define (require, exports, module) ->
 	UserView = require './user_view'
 	BaseView = require 'shared/base_view'
 
-	class UsersView extends BaseView
+	#class UsersView extends BaseView
+	UsersView = BaseView.extend
 		
 		template: _.template tpl
 		collection: null
 		
 		initialize: (options) ->
-			if options and options.collection
-				@collection = options.collection
 			return @
 
 		_getItemsContainer: () ->
@@ -26,10 +25,12 @@ define (require, exports, module) ->
 			unless @collection
 				return @
 
+			$buffer = $ '<div>'
 			@collection.each (user) =>
 				userView = new UserView
 					model: user
-				userView.render()
-				@_getItemsContainer().append userView.$el
+
+				$buffer.append userView.render().$el
+			@_getItemsContainer().append $buffer.html()
 
 			return @

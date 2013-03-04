@@ -14,18 +14,16 @@ define (require, exports, module) ->
 
 		showUsersList: ->
 			console.log 'show list'
-			view = null
 			users = new UsersCollection
 			users.fetch
 				success: @_renderUsers
 			return users
 
 		_renderUsers: (users) ->
-			view = new UsersView
+			@currentView = new UsersView
 				collection: users
-			$('#demo-box').html view.render().$el
-
-			return view
+			$('#demo-box').html @currentView.render().$el
+			return @currentView
 
 		addUser: ->
 			console.log 'add user'
