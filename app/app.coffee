@@ -12,16 +12,16 @@ define (require, exports, module) ->
 		server.start()
 
 	exports.App = Backbone.Router.extend {
-			routes:
-				'*other': 'unknownRoute'
+		routes:
+			'*other': 'unknownRoute'
 
-			initialize: ->
-				Utils.bindRoutes @, [
-					demoPackage.Controller
-					orgPackage.Controller
-				]
+		initialize: ->
+			Utils.bindRoutes @, [
+				demoPackage.Controller
+				orgPackage.Controller
+			]
 
-			unknownRoute: ->
-				console.log 'unknown'
+		unknownRoute: ->
+			console.log 'unknown'
 	}
 	return
