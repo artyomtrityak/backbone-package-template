@@ -9,6 +9,12 @@ define (require, exports, module) ->
 		server = sinon.fakeServer.create()
 		server.autoRespond = on
 		server.autoRespondAfter = 50
+
+		_getUsers = ->
+			JSON.stringify
+				items: json.users
+				__count: json.users.length
+
 		requests = [
 			{
 				method: 'GET'
@@ -17,8 +23,9 @@ define (require, exports, module) ->
 			}
 			{
 				method: 'GET'
-				route: '/organization/users'
-				response: JSON.stringify(json.users)
+				#route: '/organization/users'
+				route: /\/organization\/users.*?/
+				response: _getUsers()
 			}
 		]
 		for req in requests then do (req) ->
