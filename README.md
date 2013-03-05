@@ -63,7 +63,7 @@ It should contain Controller which provides simple urls for package routing. It 
 
 For example:
 
-```coffee
+```coffeescript
 define (require, exports, module)->
 	view = require './view'
 	model = require './model'
@@ -106,7 +106,7 @@ This is simple app-level object which can save any global variables and objects 
 
 Usage:
 
-```coffee
+```coffeescript
 appState = require 'shared/app_state'
 
 prevController = appState.get 'prevController'
@@ -118,7 +118,7 @@ appState.set 'prevController', @
 
 It is small base controller which makes default things like dispose prev controller when we route to new controller 
 
-```coffee
+```coffeescript
 onBeforeRequest: ->
 	prevController = appState.get 'prevController'
 
@@ -129,7 +129,7 @@ onBeforeRequest: ->
 
 or dispose view on change route. 
 
-```coffee
+```coffeescript
 onBeforeRequest: ->
 	if @currentView?
 		@currentView.dispose()
@@ -148,10 +148,9 @@ This is empty base view. If you need some default view functionality you can pla
 
 This is simple pub/sub app level object for events binding
 
-```js
+```coffeescript
 define ->
 	_.extend {}, Backbone.Events
-
 ```
 
 
@@ -160,18 +159,17 @@ define ->
 This module contains `bindRoutes` function which binds your routes from controller to Backbone.Router and calls `onBeforeRequest` and `onAfterRequest`
 
 
-```coffee
+```coffeescript
 	pkg.onBeforeRequest.apply pkg, argsWithDetails
 	pkg[method].apply pkg, arguments
 	pkg.onAfterRequest.apply pkg, argsWithDetails
-
 ```
 
 ### app.coffee
 
 This is main application file. Here we create Backbone.Router and bind all packages.
 
-```coffee
+```coffeescript
 Utils.bindRoutes @, [
 				demoPackage.Controller
 				orgPackage.Controller
