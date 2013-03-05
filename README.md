@@ -23,6 +23,7 @@ The main idea of this structure that you don't need learn any new framework. You
 
 - It's free and opensourse. If you have some idea how to improve this structure you can just make pull request. Issues can be created if you don't know how it will be better to solve problem and me or someone else will be able to help.
 
+
 # Structure
 
 ## app
@@ -32,6 +33,15 @@ This folder contains all you files except unit-tests and generators
 ### assets
 
 Folder for html, images, css (and sass / scss) and external libs
+
+To start application you can just view `localhost:8080/assets/index.html` file which contains Require.js project load
+
+```
+<script type="text/javascript" src="/assets/js/require-2.1.4.js"></script>
+<script type="text/javascript" src="/config.js"></script> 
+<script type="text/javascript" src="/init.js"></script> 
+```
+
 
 ### packages
 
