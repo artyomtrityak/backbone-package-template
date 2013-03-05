@@ -25,4 +25,3 @@ describe 'Test organization Users collection', ->
 				done()
 			error: ->
 				console.log 'Users FETCH ERROR: ', arguments
-		done()
