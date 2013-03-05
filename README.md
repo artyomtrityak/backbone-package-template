@@ -186,6 +186,7 @@ So we will make request with for example `model.fetch()` but response will be gi
 This is needed if you develop frontend without ready backend. Backend devs will give you json / xml which their server will respond and you will set it in `server.coffee`
 
 
+
 ## tests
 This is folder which contains your unit-tests
 
@@ -198,11 +199,18 @@ This is folder which contains your unit-tests
 It's config for test runner
 
 
+`note: when i write that it loads .coffee file i mean conpiled .js file`
+
+
 
 # Requirements
 
 - install ruby
 - __gem install sass__
+
+
+
+
 
 # Installation
 
@@ -224,10 +232,10 @@ I recommend use __brunch__ for creating new project. Also it allows use Backbone
 
 - __node_modules/.bin/brunch generate package your_package_name__ for generating package and tests for it
 
+
+
+
+
 #TODO:
-
-- documentation
-
-- examples
 
 - remove brunch and use single libs
