@@ -4,16 +4,15 @@ define (require, exports, module)->
 	BaseController = require 'shared/base_controller'
 
 	exports.Controller = class Controller extends BaseController
-		name: 'demo'
 		routes:
 			'demo2': 'demo'
 			'demo/:id': 'demo'
 
 		demo: ->
 			console.log 'demo'
-			viewIns = new view.View(
+			@currentView = new view.View(
 				model: new model.Model()
 			)
-			$('#demo-box').html viewIns.render().$el
+			$('#demo-box').html @currentView.render().$el
 			return @
 	return
