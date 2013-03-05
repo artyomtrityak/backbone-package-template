@@ -186,7 +186,7 @@ There is Require.js config here
 
 ### init.coffee
 
-simple project start file. (need to think and remove it)
+Simple project start file.
 
 
 ### server.coffee
