@@ -148,8 +148,7 @@ This is empty base view. If you need some default view functionality you can pla
 
 This is simple pub/sub app level object for events binding
 
-```coffee
-
+```js
 define ->
 	_.extend {}, Backbone.Events
 
