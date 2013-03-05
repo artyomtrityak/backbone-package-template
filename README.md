@@ -4,7 +4,7 @@
 
 #What is this?
 
-This is __not__ framework. It's just Backbone.js + Require.js application structure.
+This is __not__ framework. It's just Backbone.js + Require.js + CoffeeScript application structure.
 
 The most cool thing in Backbone.js that it's very easy. You can read docs 1 day and you're ready to start.
 It's awersome! 
@@ -36,7 +36,7 @@ Folder for html, images, css (and sass / scss) and external libs
 
 To start application you can just view `localhost:8080/assets/index.html` file which contains Require.js project load
 
-```
+```html
 <script type="text/javascript" src="/assets/js/require-2.1.4.js"></script>
 <script type="text/javascript" src="/config.js"></script> 
 <script type="text/javascript" src="/init.js"></script> 
@@ -106,7 +106,7 @@ This is simple app-level object which can save any global variables and objects 
 
 Usage:
 
-```
+```coffee
 appState = require 'shared/app_state'
 
 prevController = appState.get 'prevController'
@@ -118,7 +118,7 @@ appState.set 'prevController', @
 
 It is small base controller which makes default things like dispose prev controller when we route to new controller 
 
-```
+```coffee
 onBeforeRequest: ->
 	prevController = appState.get 'prevController'
 
@@ -129,7 +129,7 @@ onBeforeRequest: ->
 
 or dispose view on change route. 
 
-```
+```coffee
 onBeforeRequest: ->
 	if @currentView?
 		@currentView.dispose()
@@ -148,7 +148,7 @@ This is empty base view. If you need some default view functionality you can pla
 
 This is simple pub/sub app level object for events binding
 
-```
+```coffee
 define ->
 	_.extend {}, Backbone.Events
 ```
@@ -159,7 +159,7 @@ define ->
 This module contains `bindRoutes` function which binds your routes from controller to Backbone.Router and calls `onBeforeRequest` and `onAfterRequest`
 
 
-```
+```coffee
 ...
 	pkg.onBeforeRequest.apply pkg, argsWithDetails
 	pkg[method].apply pkg, arguments
@@ -171,7 +171,7 @@ This module contains `bindRoutes` function which binds your routes from controll
 
 This is main application file. Here we create Backbone.Router and bind all packages.
 
-```
+```coffee
 Utils.bindRoutes @, [
 				demoPackage.Controller
 				orgPackage.Controller
