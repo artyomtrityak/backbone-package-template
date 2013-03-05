@@ -28,7 +28,7 @@ The main idea of this structure that you don't need learn any new framework. You
 
 ## app
 
-This folder contains all you files except unit-tests and generators
+This folder contains all your files except unit-tests and generators
 
 ### assets
 
@@ -63,7 +63,7 @@ It should contain Controller which provides simple urls for package routing. It 
 
 For example:
 
-```
+```coffee
 define (require, exports, module)->
 	view = require './view'
 	model = require './model'
