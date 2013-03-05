@@ -14,7 +14,7 @@ describe 'Test organization Users collection', ->
 		expect(users).to.have.a.property 'size'
 		expect(users.size).to.be.a 'function'
 
-		users.fetch
+		users.pager
 			success: (_users) ->
 				expect(users.size()).to.be.equal 2
 				expectedIds = [7, 12]
@@ -23,5 +23,5 @@ describe 'Test organization Users collection', ->
 					expect(user).to.be.an 'object'
 					expect(user.get('id')).to.be.equal id
 				done()
-			error: (e) ->
-				console.log 'Users FETCH ERROR: ', e
+			error: ->
+				console.log 'Users FETCH ERROR: ', arguments
