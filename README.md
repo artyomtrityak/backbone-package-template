@@ -149,8 +149,10 @@ This is empty base view. If you need some default view functionality you can pla
 This is simple pub/sub app level object for events binding
 
 ```coffee
+
 define ->
 	_.extend {}, Backbone.Events
+
 ```
 
 
@@ -160,7 +162,6 @@ This module contains `bindRoutes` function which binds your routes from controll
 
 
 ```coffee
-...
 	pkg.onBeforeRequest.apply pkg, argsWithDetails
 	pkg[method].apply pkg, arguments
 	pkg.onAfterRequest.apply pkg, argsWithDetails
