@@ -15,7 +15,7 @@ define (require, exports, module) ->
 		showUsersList: ->
 			console.log 'show list'
 			users = new UsersCollection
-			users.fetch
+			users.goTo 1,
 				success: @_renderUsers
 			return users
 

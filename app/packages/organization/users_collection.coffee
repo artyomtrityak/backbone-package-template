@@ -14,7 +14,7 @@ define (require, exports, module) ->
 		paginator_ui:
 			firstPage: 1
 			currentPage: 1
-			perPage: 3
+			perPage: 10
 			totalPages: 10
 
 		server_api:
