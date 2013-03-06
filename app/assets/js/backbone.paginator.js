@@ -1,9 +1,12 @@
-/*globals Backbone:true, _:true, jQuery:true*/
+/*! backbone.paginator - v0.5.1-dev - 3/5/2013
+* http://github.com/addyosmani/backbone.paginator
+* Copyright (c) 2013 Addy Osmani; Licensed MIT */
+
 Backbone.Paginator = (function ( Backbone, _, $ ) {
   "use strict";
 
   var Paginator = {};
-  Paginator.version = "<%= pkg.version %>";
+  Paginator.version = "0.5.1-dev";
 
   // @name: clientPager
   //
