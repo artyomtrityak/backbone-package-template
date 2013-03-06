@@ -51,6 +51,7 @@ module.exports = function(grunt) {
 		watch: {
 			files: [
 				'app/assets/scss/*.scss',
+				'app/*.coffee',
 				'app/**/*.coffee',
 				'tests/**/*.coffee',
 				'generators/**/*.coffee'
