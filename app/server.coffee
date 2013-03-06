@@ -20,7 +20,7 @@ define (require, exports, module) ->
 		pairs = queryString.split '&'
 		for pair in pairs
 			key = pair.split '='
-			if key.length
+			if key.length > 1
 				params[decode key[0]] = decode key[1]
 		return params
 
