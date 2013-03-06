@@ -50,8 +50,6 @@ define (require, exports, module) ->
 					else 'MODERATE TOUTS'
 
 		_getUsers = (xhr, queryString) ->
-			console.log 'xhr :::: ', xhr
-			console.log 'query string :::: ', queryString
 			_intParam = (key) ->
 				parseInt getQueryStringParam xhr.url, key
 			items = json.users.concat (createUser id for id in [20..100])
