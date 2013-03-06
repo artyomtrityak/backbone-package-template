@@ -14,14 +14,13 @@ define (require, exports, module) ->
 
 	getQuerySringParams = (url) ->
 		params  = {}
-		decode = (str) ->
-			decodeURIComponent str.replace /\+/g, ' '
+		url = decodeURIComponent url.replace /\+/g, ' '
 		queryString = url.replace /^.*?\?/, ''
 		pairs = queryString.split '&'
 		for pair in pairs
 			key = pair.split '='
 			if key.length > 1
-				params[decode key[0]] = decode key[1]
+				params[key[0]] = key[1]
 		return params
 
 	exports.start = ->
