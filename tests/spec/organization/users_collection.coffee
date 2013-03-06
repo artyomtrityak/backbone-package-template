@@ -16,8 +16,8 @@ describe 'Test organization Users collection', ->
 
 		users.pager
 			success: (_users) ->
-				expect(users.size()).to.be.equal 2
-				expectedIds = [7, 12]
+				expect(users.size()).to.be.equal 10
+				expectedIds = [7, 12, 27]
 				for id in expectedIds
 					user = users.get(id)
 					expect(user).to.be.an 'object'
