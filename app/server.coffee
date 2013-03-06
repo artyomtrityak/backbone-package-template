@@ -12,10 +12,17 @@ define (require, exports, module) ->
 			content
 		]
 
-	getQueryStringParam = (url, key) ->
-		key = key.replace /[*+?^$.\[\]{}()|\\\/]/g, '\\$&'
-		match = url.match new RegExp '[?&]' + key + '=([^&]+)(&|$)'
-		return match && decodeURIComponent match[1].replace /\+/g, ' '
+	getQuerySringParams = (url) ->
+		params  = {}
+		decode = (str) ->
+			decodeURIComponent str.replace /\+/g, ' '
+		queryString = url.replace /^.*?\?/, ''
+		pairs = queryString.split '&'
+		for pair in pairs
+			key = pair.split '='
+			if key.length
+				params[decode key[0]] = decode key[1]
+		return params
 
 	exports.start = ->
 		server = sinon.fakeServer.create()
@@ -35,20 +42,19 @@ define (require, exports, module) ->
 			response = _buildResponse JSON.stringify(data), status
 			xhr.respond.apply xhr, response
 
-		_randBool = ->
-			parseInt(Math.random() * 100) % 2 > 0
-
 		_getUsers = (xhr, queryString) ->
-			_intParam = (key) ->
-				parseInt getQueryStringParam xhr.url, key
+			params = getQuerySringParams xhr.url
 			items = json.users.concat (_createUser id for id in [20..100])
-			skip = _intParam('$skip') or 0
-			pageSize = _intParam('$top') or items.length
+			skip = parseInt(params.$skip) or 0
+			pageSize = parseInt(params.$top) or items.length
 			data = JSON.stringify
 				items: items.slice skip, skip + pageSize
 				__count: items.length
 			response = _buildResponse data
 			xhr.respond.apply xhr, response
+
+		_randBool = () ->
+			!!_.random 0, 1
 
 		_createUser = (id) ->
 			index = if _randBool() then 1 else 0
@@ -77,7 +83,7 @@ define (require, exports, module) ->
 				response: _getUser
 			}
 		]
-		
+
 		for req in requests then do (req) ->
 			if _.isFunction req.response
 				response = req.response
