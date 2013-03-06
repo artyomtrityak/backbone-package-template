@@ -27,19 +27,30 @@ define (require, exports, module) ->
 			id = parseInt id
 			user = _(json.users).findWhere {id: id}
 			if user
-				data = _buildResponse JSON.stringify user
+				data = user
 				status = 200
-				response = _buildResponse data, status
 			else
-				data = '{"error": "User not found"}'
-				status = 400
-				response = _buildResponse data, status
+				data = {error: 'User not found'}
+				status = 404
+			response = _buildResponse JSON.stringify(data), status
 			xhr.respond.apply xhr, response
 
 		_randBool = ->
 			parseInt(Math.random() * 100) % 2 > 0
 
-		createUser = (id) ->
+		_getUsers = (xhr, queryString) ->
+			_intParam = (key) ->
+				parseInt getQueryStringParam xhr.url, key
+			items = json.users.concat (_createUser id for id in [20..100])
+			skip = _intParam('$skip') or 0
+			pageSize = _intParam('$top') or items.length
+			data = JSON.stringify
+				items: items.slice skip, skip + pageSize
+				__count: items.length
+			response = _buildResponse data
+			xhr.respond.apply xhr, response
+
+		_createUser = (id) ->
 			index = if _randBool() then 1 else 0
 			_.extend {}, json.users[index],
 				id: id
@@ -48,18 +59,6 @@ define (require, exports, module) ->
 					if _randBool()
 					then 'AUTO_PUBLISH'
 					else 'MODERATE TOUTS'
-
-		_getUsers = (xhr, queryString) ->
-			_intParam = (key) ->
-				parseInt getQueryStringParam xhr.url, key
-			items = json.users.concat (createUser id for id in [20..100])
-			skip = _intParam('$skip') or 0
-			pageSize = _intParam('$top') or items.length
-			data = JSON.stringify
-				items: items.slice skip, skip + pageSize
-				__count: items.length
-			response = _buildResponse data
-			xhr.respond.apply xhr, response
 
 		requests = [
 			{
@@ -72,7 +71,13 @@ define (require, exports, module) ->
 				route: /\/organization\/users(\?.*?)?$/
 				response: _getUsers
 			}
+			{
+				method: 'GET'
+				route: /\/organization\/user\/(\d+)/
+				response: _getUser
+			}
 		]
+		
 		for req in requests then do (req) ->
 			if _.isFunction req.response
 				response = req.response
@@ -80,17 +85,5 @@ define (require, exports, module) ->
 				response = _buildResponse req.response
 			server.respondWith req.method, req.route, response
 
-		server.respondWith 'GET', /\/organization\/user\/(\d+)/, (xhr, id) ->
-			user = null
-			id = parseInt id
-			user = _(json.users).findWhere {id: id}
-			if user
-				xhr.respond 200,
-					"Content-Type": "application/json",
-					JSON.stringify(user)
-			else
-				xhr.respond 404,
-					"Content-Type": "application/json",
-					'{"error": "User not found"}'
 		return
 	return
