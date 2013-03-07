@@ -1,8 +1,18 @@
 <ul>
 	
-	<li <% if (!data.hasPrev) print('class="disabled"'); %>><a href="#">&laquo;</a></li>
+	<li <% if (!data.hasPrev) print('class="disabled"'); %>>
+		<a href="#<%= data.baseRoute + "/p/" + (data.current - 1) %>">
+			&laquo;
+		</a>
+	</li>
 	<% _(data.pageRange).each(function(v) { %>
-	<li <% if (v == data.current) { print('class="active"') } %>><a href="#"><%= v %></a></li>
+	<li <% if (v == data.current) { print('class="active"') } %>>
+		<a href="#<%= data.baseRoute + "/p/" +  v %>"><%= v %></a>
+	</li>
 	<% });%>
-	<li <% if (!data.hasNext) print('class="disabled"'); %>><a href="#">&raquo;</a></li>
+	<li <% if (!data.hasNext) print('class="disabled"'); %>>
+		<a href="#<%= data.baseRoute + "/p/" + (data.current + 1) %>">
+			&raquo;
+		</a>
+	</li>
 </ul>

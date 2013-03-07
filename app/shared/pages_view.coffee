@@ -8,14 +8,21 @@ define (require, exports, module) ->
 		tagName: 'div'
 		className: 'pagination'
 
+		events:
+			"click li.active a,li.disabled a": "noop"
+
 		template: _.template Template
 		pagesCount: 5
 		data: {}
+
+		noop: (e)->
+			e.preventDefault()
 
 		initialize: (opts) ->
 			cp = @collection.currentPage
 			tp = @collection.totalPages
 			pc = @pagesCount
+			opts.baseRoute = opts.baseRoute or ""
 
 			if _(['right', 'centered']).indexOf(opts.alignment) isnt -1
 				@alignment = opts.alignment
@@ -31,9 +38,10 @@ define (require, exports, module) ->
 
 			@data =
 				pageRange: if tp isnt 1 then _.range sp, top else [1]
-				hasPrev  : cp isnt 1
-				hasNext  : cp isnt tp
-				current  : cp
+				hasPrev: cp isnt 1
+				hasNext: cp isnt tp
+				current: cp
+				baseRoute: opts.baseRoute.replace /(^\/+)|(\/+$)/g, ""
 
 			@
 
