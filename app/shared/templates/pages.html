@@ -1,0 +1,8 @@
+<ul>
+	
+	<li <% if (!data.hasPrev) print('class="disabled"'); %>><a href="#">&laquo;</a></li>
+	<% _(data.pageRange).each(function(v) { %>
+	<li <% if (v == data.current) { print('class="active"') } %>><a href="#"><%= v %></a></li>
+	<% });%>
+	<li <% if (!data.hasNext) print('class="disabled"'); %>><a href="#">&raquo;</a></li>
+</ul>

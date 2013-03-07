@@ -22,6 +22,8 @@ define (require, exports, module) ->
 		_renderUsers: (users) ->
 			@currentView = new UsersView
 				collection: users
+				alignment: 'centered'
+
 			$('#demo-box').html @currentView.render().$el
 			return @currentView
 
