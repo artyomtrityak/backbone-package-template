@@ -1,16 +1,16 @@
 <ul>
 	
-	<li <% if (!data.hasPrev) print('class="disabled"'); %>>
+	<li class="<%= data.hasPrev ? '' : 'disabled' %>">
 		<a href="#<%= data.baseRoute + "/p/" + (data.current - 1) %>">
 			&laquo;
 		</a>
 	</li>
 	<% _(data.pageRange).each(function(v) { %>
-	<li <% if (v == data.current) { print('class="active"') } %>>
+	<li class="<%= (v == data.current) ? 'active' : '' %>">
 		<a href="#<%= data.baseRoute + "/p/" +  v %>"><%= v %></a>
 	</li>
 	<% });%>
-	<li <% if (!data.hasNext) print('class="disabled"'); %>>
+	<li class="<%= data.hasNext ? '' : 'disabled' %>">
 		<a href="#<%= data.baseRoute + "/p/" + (data.current + 1) %>">
 			&raquo;
 		</a>
