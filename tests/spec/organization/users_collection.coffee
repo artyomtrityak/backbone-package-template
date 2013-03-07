@@ -22,6 +22,14 @@ describe 'Test organization Users collection', ->
 					user = users.get(id)
 					expect(user).to.be.an 'object'
 					expect(user.get('id')).to.be.equal id
+				paginationProperties = [
+					'firstPage'
+					'currentPage'
+					'perPage'
+					'totalPages'
+				]
+				for prop in paginationProperties
+					expect(users).to.have.a.property prop
 				done()
 			error: ->
 				console.log 'Users FETCH ERROR: ', arguments

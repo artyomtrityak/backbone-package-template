@@ -1,7 +1,7 @@
 define (require, exports, module) ->
 
 	BaseView = require 'shared/base_view'
-	Template = require 'text!shared/templates/pages.html'
+	Template = require 'text!shared/pagination/templates/pages.html'
 
 	class PagesView extends BaseView
 
@@ -32,13 +32,13 @@ define (require, exports, module) ->
 
 		_initViewData: ->
 			@data =
-				pageRange: @_getPagesRange()
+				pageRange: @_getPageRange()
 				hasPrev: @collection.currentPage isnt 1
 				hasNext: @collection.currentPage isnt @collection.totalPages
-				current: @collection.currentPage
+				current: @collection.currentPage or 1
 				baseRoute: @options.baseRoute.replace /(^\/+)|(\/+$)/g, ""
 
-		_getPagesRange: ->
+		_getPageRange: ->
 			unless @collection.totalPages is 1
 				_.range @_getStartPage(), @_getTopPage()
 			else
