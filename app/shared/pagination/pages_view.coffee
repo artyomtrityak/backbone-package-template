@@ -18,34 +18,47 @@ define (require, exports, module) ->
 			e.preventDefault()
 
 		initialize: (opts) ->
-			cp = @collection.currentPage
-			tp = @collection.totalPages
-			pc = @pagesCount
-			opts.baseRoute = opts.baseRoute or ""
-
-			if _(['right', 'centered']).indexOf(opts.alignment) isnt -1
-				@alignment = opts.alignment
-
-			# halfPagesCount
-			hpc = Math.floor (pc - 1) / 2 
-
-			# startPage
-			sp = if (cp - hpc) > 1 then cp - hpc else 1 
-
-			# toPage
-			top = if (sp + pc) > (tp + 1) then (tp + 1) else sp + pc
-
-			@data =
-				pageRange: if tp isnt 1 then _.range sp, top else [1]
-				hasPrev: cp isnt 1
-				hasNext: cp isnt tp
-				current: cp
-				baseRoute: opts.baseRoute.replace /(^\/+)|(\/+$)/g, ""
-
+			@_initBaseRoute()
+			@_initAlignment()
+			@_initViewData()
 			@
 
-		render: -> 
-			@$el.html @template({ data: @data })
+		_initBaseRoute: ->
+			@baseRoute = @options.baseRoute = @options.baseRoute or ""
 
+		_initAlignment: ->
+			if _(['right', 'centered']).contains @options.alignment
+				@alignment = @options.alignment
+
+		_initViewData: ->
+			@data =
+				pageRange: @_getPagesRange()
+				hasPrev: @collection.currentPage isnt 1
+				hasNext: @collection.currentPage isnt @collection.totalPages
+				current: @collection.currentPage
+				baseRoute: @options.baseRoute.replace /(^\/+)|(\/+$)/g, ""
+
+		_getPagesRange: ->
+			unless @collection.totalPages is 1
+				_.range @_getStartPage(), @_getTopPage()
+			else
+				[1]
+
+		_getStartPage: ->
+			pDiff = @collection.currentPage - @_getHalfPagesCount()
+			startPage = if (pDiff) > 1 then pDiff else 1
+
+		_getHalfPagesCount: ->
+			Math.floor (@pagesCount - 1) / 2
+
+		_getTopPage: ->
+			topPage = @_getStartPage() + @pagesCount
+			max = @collection.totalPages + 1
+			if topPage > max
+				topPage = max
+			topPage
+
+		render: ->
+			@$el.html @template data: @data
 			@$el.addClass "pagination-#{@alignment}"
 			@
