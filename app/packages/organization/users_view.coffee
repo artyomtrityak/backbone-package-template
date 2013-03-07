@@ -2,15 +2,11 @@ define (require, exports, module) ->
 	
 	tpl = require 'text!./templates/users.html'
 	UserView = require './user_view'
-	BasePaginationView = require 'shared/base_pagination_view'
+	BasePaginatedView = require 'shared/pagination/base_paginated_view'
 
-	class UsersView extends BasePaginationView
+	class UsersView extends BasePaginatedView
 
 		template: _.template tpl
-
-		initialize: (options) ->
-			super options
-			return @
 
 		_getItemsContainer: () ->
 			unless @$itemsContainer
@@ -37,6 +33,6 @@ define (require, exports, module) ->
 				$buffer.append userView.render().$el
 			@_getItemsContainer().append $buffer.html()
 
-			@_getPaginationContainer().append @pageView.render().$el
+			@_getPaginationContainer().append @pagesView.render().$el
 
 			return @

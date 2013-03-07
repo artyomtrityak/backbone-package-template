@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<XMI verified="false" xmi.version="1.2" timestamp="2013-03-07T15:40:04" xmlns:UML="http://schema.omg.org/spec/UML/1.3">
+<XMI verified="false" xmi.version="1.2" timestamp="2013-03-07T17:32:40" xmlns:UML="http://schema.omg.org/spec/UML/1.3">
  <XMI.header>
   <XMI.documentation>
    <XMI.exporter>umbrello uml modeller http://uml.sf.net</XMI.exporter>
@@ -64,6 +64,13 @@
         <UML:AssociationEnd changeability="changeable" visibility="public" isNavigable="true" isSpecification="false" xmi.id="gZgP7Nn8Mg0d" type="dGwJNf3cHuRq" name="" aggregation="none"/>
        </UML:Association.connection>
       </UML:Association>
+      <UML:Class visibility="public" isSpecification="false" namespace="Logical View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="2wILnH2Tqgtw" name="UsersView"/>
+      <UML:Association visibility="public" isSpecification="false" namespace="Logical View" xmi.id="3e4NK208Koq1" name="">
+       <UML:Association.connection>
+        <UML:AssociationEnd changeability="changeable" visibility="public" isNavigable="false" isSpecification="false" xmi.id="5xxTM6vP2Dkp" type="G7R7UFcbxNXZ" name="" aggregation="none"/>
+        <UML:AssociationEnd changeability="changeable" visibility="public" isNavigable="true" isSpecification="false" xmi.id="UmHJS8FTmHq5" type="2wILnH2Tqgtw" name="" aggregation="none"/>
+       </UML:Association.connection>
+      </UML:Association>
      </UML:Namespace.ownedElement>
      <XMI.extension xmi.extender="umbrello">
       <diagrams>
@@ -71,8 +78,9 @@
         <widgets>
          <classwidget linecolor="none" usesdiagramfillcolor="1" linewidth="none" showoperations="1" usesdiagramusefillcolor="1" showpubliconly="1" showpackage="1" x="265" showattsigs="601" showstereotype="1" y="7" showattributes="1" font="Sans Serif,9,-1,0,75,0,0,0,0,0" width="137" isinstance="0" usefillcolor="1" fillcolor="none" xmi.id="7kmxbvEcG55u" showscope="1" height="48" showopsigs="601"/>
          <classwidget linecolor="none" usesdiagramfillcolor="1" linewidth="none" showoperations="1" usesdiagramusefillcolor="1" showpubliconly="1" showpackage="1" x="114" showattsigs="601" showstereotype="1" y="231" showattributes="1" font="Sans Serif,9,-1,0,75,0,0,0,0,0" width="105" isinstance="0" usefillcolor="1" fillcolor="none" xmi.id="dGwJNf3cHuRq" showscope="1" height="54" showopsigs="601"/>
-         <classwidget linecolor="none" usesdiagramfillcolor="1" linewidth="none" showoperations="1" usesdiagramusefillcolor="1" showpubliconly="1" showpackage="1" x="447" showattsigs="601" showstereotype="1" y="230" showattributes="1" font="Sans Serif,9,-1,0,75,0,0,0,0,0" width="165" isinstance="0" usefillcolor="1" fillcolor="none" xmi.id="G7R7UFcbxNXZ" showscope="1" height="46" showopsigs="601"/>
+         <classwidget linecolor="none" usesdiagramfillcolor="1" linewidth="none" showoperations="1" usesdiagramusefillcolor="1" showpubliconly="1" showpackage="1" x="447" showattsigs="601" showstereotype="1" y="230" showattributes="1" font="Sans Serif,9,-1,0,75,0,0,0,0,0" width="165" isinstance="0" usefillcolor="1" fillcolor="none" xmi.id="G7R7UFcbxNXZ" showscope="1" height="35" showopsigs="601"/>
          <classwidget linecolor="none" usesdiagramfillcolor="1" linewidth="none" showoperations="1" usesdiagramusefillcolor="1" showpubliconly="1" showpackage="1" x="265" showattsigs="601" showstereotype="1" y="104" showattributes="1" font="Sans Serif,9,-1,0,75,0,0,0,0,0" width="150" isinstance="0" usefillcolor="1" fillcolor="none" xmi.id="Il9WoEQRTKkq" showscope="1" height="48" showopsigs="601"/>
+         <classwidget linecolor="none" usesdiagramfillcolor="1" linewidth="none" showoperations="1" usesdiagramusefillcolor="1" showpubliconly="1" showpackage="1" x="452" showattsigs="601" showstereotype="1" y="353" showattributes="1" font="Sans Serif,9,-1,0,75,0,0,0,0,0" width="158" isinstance="0" usefillcolor="1" fillcolor="none" xmi.id="2wILnH2Tqgtw" showscope="1" height="53" showopsigs="601"/>
         </widgets>
         <messages/>
         <associations>
@@ -103,6 +111,12 @@
            <point x="158" y="131"/>
           </linepath>
          </assocwidget>
+         <assocwidget indexa="1" indexb="1" usesdiagramusefillcolor="0" widgetaid="G7R7UFcbxNXZ" usesdiagramfillcolor="0" fillcolor="#000000" linecolor="none" totalcounta="2" xmi.id="3e4NK208Koq1" widgetbid="2wILnH2Tqgtw" totalcountb="2" type="512" usefillcolor="0" linewidth="none">
+          <linepath>
+           <startpoint startx="527" starty="265"/>
+           <endpoint endx="527" endy="353"/>
+          </linepath>
+         </assocwidget>
         </associations>
        </diagram>
       </diagrams>
@@ -124,7 +138,7 @@
   </UML:Model>
  </XMI.content>
  <XMI.extensions xmi.extender="umbrello">
-  <docsettings viewid="mNeBAALL1XXB" uniqueid="qIqijG8wORBU" documentation=""/>
+  <docsettings viewid="mNeBAALL1XXB" uniqueid="UmHJS8FTmHq5" documentation=""/>
   <listview>
    <listitem open="1" type="800" id="Views">
     <listitem open="1" type="821" id="Component View"/>
@@ -153,6 +167,7 @@
       <listitem open="1" type="829" id="3YhFdjuHqtAI"/>
      </listitem>
      <listitem open="1" type="813" id="dGwJNf3cHuRq"/>
+     <listitem open="1" type="813" id="2wILnH2Tqgtw"/>
     </listitem>
     <listitem open="1" type="802" id="Use Case View"/>
    </listitem>

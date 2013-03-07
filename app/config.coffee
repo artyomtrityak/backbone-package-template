@@ -17,7 +17,7 @@ require.config {
 		'underscore': {
 			exports: '_'
 		},
-		'backbone.paginator': ['jquery', 'underscore', 'backbone'],
+		'backbone.paginator': ['backbone'],
 		'bootstrap': ['jquery'],
 		'backbone.validation': ['backbone'],
 		'backbone.routefilter': ['backbone'],

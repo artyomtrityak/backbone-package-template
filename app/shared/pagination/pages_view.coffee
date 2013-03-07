@@ -3,9 +3,8 @@ define (require, exports, module) ->
 	BaseView = require 'shared/base_view'
 	Template = require 'text!shared/templates/pages.html'
 
-	class PageView extends BaseView
+	class PagesView extends BaseView
 
-		tagName: 'div'
 		className: 'pagination'
 
 		events:
