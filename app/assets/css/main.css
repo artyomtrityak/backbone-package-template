@@ -2,5 +2,9 @@ body {
   padding-top: 2px;
   padding-bottom: 40px; }
 
-.table-users td {
+.table-users tbody td {
   line-height: 36px; }
+.table-users tfoot td.pagination-wrap {
+  background-color: #f8f8f8; }
+  .table-users tfoot td.pagination-wrap .pagination {
+    margin: 0px; }

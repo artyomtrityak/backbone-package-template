@@ -2,20 +2,25 @@ define (require, exports, module) ->
 	
 	tpl = require 'text!./templates/users.html'
 	UserView = require './user_view'
-	BaseView = require 'shared/base_view'
+	BasePaginationView = require 'shared/base_pagination_view'
 
-	class UsersView extends BaseView
-		
+	class UsersView extends BasePaginationView
+
 		template: _.template tpl
-		collection: null
-		
+
 		initialize: (options) ->
+			super options
 			return @
 
 		_getItemsContainer: () ->
 			unless @$itemsContainer
 				@$itemsContainer = $ 'tbody.items', @$el
 			@$itemsContainer
+
+		_getPaginationContainer: ->
+			unless @$paginationContainer
+				@$paginationContainer = $ 'tfoot td.pagination-wrap', @$el
+			@$paginationContainer
 
 		render: ->
 			
@@ -31,5 +36,7 @@ define (require, exports, module) ->
 
 				$buffer.append userView.render().$el
 			@_getItemsContainer().append $buffer.html()
+
+			@_getPaginationContainer().append @pageView.render().$el
 
 			return @
