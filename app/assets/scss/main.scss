@@ -6,7 +6,15 @@ body {
 }
 
 .table-users {
-    td {
+    tbody td {
         line-height: 36px;
+    }
+
+    tfoot td.pagination-wrap {
+        background-color: #f8f8f8;
+
+        & .pagination {
+            margin: 0px;
+        }
     }
 }

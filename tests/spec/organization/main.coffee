@@ -17,7 +17,7 @@ describe 'Test users controller', ->
 		expect(cnt.routes).to.be.a 'object'
 		expect(cnt.routes).to.be.deep.equal {
 			'organization': 'showUsersList'
-			'organization/users': 'showUsersList'
+			'organization/users(/p/:page)': 'showUsersList'
 			'organization/users/add': 'addUser'
 			'organization/users/:id': 'showUserDetails'
 		}
