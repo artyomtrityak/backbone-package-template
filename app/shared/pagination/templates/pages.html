@@ -1,0 +1,18 @@
+<ul>
+	
+	<li class="<%= data.hasPrev ? '' : 'disabled' %>">
+		<a href="#<%= data.baseRoute + "/p/" + (data.current - 1) %>">
+			&laquo;
+		</a>
+	</li>
+	<% _(data.pageRange).each(function(v) { %>
+	<li class="<%= (v == data.current) ? 'active' : '' %>">
+		<a href="#<%= data.baseRoute + "/p/" +  v %>"><%= v %></a>
+	</li>
+	<% });%>
+	<li class="<%= data.hasNext ? '' : 'disabled' %>">
+		<a href="#<%= data.baseRoute + "/p/" + (data.current + 1) %>">
+			&raquo;
+		</a>
+	</li>
+</ul>
