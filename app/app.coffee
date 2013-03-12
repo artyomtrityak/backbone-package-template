@@ -2,7 +2,6 @@ define (require, exports, module) ->
 	
 	# Packages loading	
 	demoPackage = require 'packages/demo'
-	orgPackage = require 'packages/organization'
 	
 	#Utils and other
 	Utils = require 'shared/utils'
@@ -18,7 +17,6 @@ define (require, exports, module) ->
 		initialize: ->
 			Utils.bindRoutes @, [
 				demoPackage.Controller
-				orgPackage.Controller
 			]
 
 		unknownRoute: ->
