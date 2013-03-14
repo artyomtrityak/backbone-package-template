@@ -14,13 +14,13 @@ files = [
 	{pattern: 'app/assets/js/require-2.1.4.js', included: true, served: true, watched: true}
 	'app/config.js'
 	'tests/test-config.js'
+	{pattern: 'app/packages/**/spec/*.js', included: true, served: true, watched: true}
+	{pattern: 'tests/spec/**/*.js', included: true, served: true, watched: true}
 
 	{pattern: 'app/assets/json/*.json', included: false, served: true, watched: true}
 	{pattern: 'app/*.js', included: false, served: true, watched: true}
 	{pattern: 'app/**/*.js', included: false, served: true, watched: true}
 	{pattern: 'app/**/*.html', included: false, served: true, watched: true}
-	
-	{pattern: 'tests/spec/**/*.js', included: true, served: true, watched: true}
 ]
 
 

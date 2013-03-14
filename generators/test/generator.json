@@ -2,19 +2,19 @@
   "files": [
     {
       "from": "test.hbs",
-      "to": "tests/spec/{{name}}/main.coffee"
+      "to": "app/packages/{{name}}/spec/main.coffee"
     },
     {
       "from": "test.hbs",
-      "to": "tests/spec/{{name}}/model.coffee"
+      "to": "app/packages/{{name}}/spec/model.coffee"
     },
     {
       "from": "test.hbs",
-      "to": "tests/spec/{{name}}/view.coffee"
+      "to": "app/packages/{{name}}/spec/view.coffee"
     },
     {
       "from": "test.hbs",
-      "to": "tests/spec/{{name}}/collection.coffee"
+      "to": "app/packages/{{name}}/spec/collection.coffee"
     }
   ],
   "dependencies": []

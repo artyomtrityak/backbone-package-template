@@ -5,7 +5,7 @@ define (require, exports, module)->
 
 	exports.Controller = class Controller extends BaseController
 		routes:
-			'demo2': 'demo'
+			'demo': 'demo'
 			'demo/:id': 'demo'
 
 		demo: ->
