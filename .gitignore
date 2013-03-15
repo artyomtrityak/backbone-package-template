@@ -20,6 +20,8 @@ tests/spec/*/*.js
 tests/spec/*/*/*.js
 tests/spec/*/*/*/*.js
 
+server/*.js
+
 !app/assets/*
 !app/assets/*/*
 
