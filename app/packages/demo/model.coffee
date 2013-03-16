@@ -1,5 +1,5 @@
 define (require, exports, module)->
-	exports.Model = Backbone.Model.extend(
+	exports.Model = class MyModel extends Backbone.Model
 		url: '/test'
 		defaults:
 			username: 'Petro'
@@ -18,5 +18,4 @@ define (require, exports, module)->
 					msg: 'Invalid email'
 				}
 			]
-	)
 	return

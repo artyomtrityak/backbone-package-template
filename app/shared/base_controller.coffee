@@ -22,3 +22,5 @@ define (require, exports, module) ->
 		onAfterRequest: ->
 
 		destructor: ->
+			if @currentView?
+					@currentView.dispose()

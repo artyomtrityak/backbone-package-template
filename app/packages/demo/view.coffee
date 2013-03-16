@@ -1,7 +1,7 @@
 define (require, exports, module)->
 	tpl = require 'text!./templates/demo.html'
 
-	exports.View = Backbone.View.extend(
+	exports.View = class MyView extends Backbone.View
 		template: _.template tpl
 
 		events: 
@@ -21,5 +21,4 @@ define (require, exports, module)->
 		showNotification: ->
 			@$('#demoModal').modal 'show'
 			return @
-	)
 	return
