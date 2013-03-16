@@ -226,7 +226,7 @@ I recommend use __brunch__ for creating new project. Also it allows use Backbone
 
 - __npm -g install brunch__
 
-- __brunch new your_project_folder github://artyomtrityak/backbone-package-template__
+- __brunch new your_project_folder -s github://artyomtrityak/backbone-package-template__
 
 - open __http://localhost:8080__
 
