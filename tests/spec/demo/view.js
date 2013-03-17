@@ -10,15 +10,13 @@ describe('Test', function() {
 	});
 
 	it('expect view should return view', function(done){
-		expect(view).to.be.a('object');
-		expect(view).to.have.property('View');
-		expect(view.View).to.be.a('function');
+		expect(view).to.be.a('function');
 
 		done();
 	});
 
 	it('expect view should contain correct template', function (done) {
-		var viewIns = new view.View();
+		var viewIns = new view();
 		expect(viewIns instanceof Backbone.View).to.be.ok;
 		expect(viewIns).to.have.property('template');
 		expect(viewIns.template).to.be.a('function');
@@ -30,7 +28,7 @@ describe('Test', function() {
 	});
 
 	it('should allow render template', function () {
-		var viewIns = new view.View();
+		var viewIns = new view();
 		expect(viewIns).to.have.property('render');
 		expect(viewIns.render()).to.be.equal(viewIns);
 		expect(viewIns.render().$el).to.be.a('object');
@@ -38,7 +36,7 @@ describe('Test', function() {
 	});
 
 	it('should allow show notification', function () {
-		var viewIns = new view.View();
+		var viewIns = new view();
 		expect(viewIns).to.have.property('showNotification');
 		expect(viewIns.showNotification).to.be.a('function');
 		expect(viewIns.showNotification()).to.be.a('object');

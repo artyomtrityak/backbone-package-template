@@ -12,23 +12,22 @@ describe('Test', function() {
 	});
 
 	it('should be correct model', function () {
-		expect(model).to.be.a('object');
-		expect(model.Model).to.be.a('function');
-		expect((new model.Model()) instanceof Backbone.Model).to.be.ok;
+		expect(model).to.be.a('function');
+		expect((new model()) instanceof Backbone.Model).to.be.ok;
 	});
 
 	it('should have corrent defaults', function () {
-		var modelIns = new model.Model();
+		var modelIns = new model();
 		expect(modelIns.defaults).to.be.deep.equal({
 			username: 'Petro'
 		});
 	});
 
 	it('should have corrent url and be able to fetch', function (done) {
-		var modelIns = new model.Model();
+		var modelIns = new model();
 		expect(modelIns.url).to.be.equal("/test");
-		var m = new model.Model();
-		var viewIns = new view.View({
+		var m = new model();
+		var viewIns = new view({
 			model: m
 		});
 

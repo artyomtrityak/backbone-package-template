@@ -1,7 +1,11 @@
 define (require, exports, module) ->
 	
 	# Packages loading	
+	# It's demo pachages, remove them
 	demoPackage = require 'packages/demo'
+	friendsPackage = require 'packages/friends-demo'
+
+	#TODO: Unknown controller
 	
 	#Utils and other
 	Utils = require 'shared/utils'
@@ -16,7 +20,8 @@ define (require, exports, module) ->
 
 		initialize: ->
 			Utils.bindRoutes @, [
-				demoPackage.Controller
+				demoPackage
+				friendsPackage
 			]
 
 		unknownRoute: ->

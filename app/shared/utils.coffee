@@ -1,4 +1,4 @@
-define ['exports'], (exports)->
+define (require, exports, module)->
 	
 	exports.bindRoutes = (Router, packages)->
 		for packageEl in packages

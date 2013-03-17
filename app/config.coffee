@@ -20,7 +20,6 @@ require.config {
 		'backbone.paginator': ['backbone'],
 		'bootstrap': ['jquery'],
 		'backbone.validation': ['backbone'],
-		'backbone.routefilter': ['backbone'],
 		'app': [
 			'text',
 			'backbone.validation',
@@ -40,5 +39,5 @@ require.config {
 		'sinon': 'assets/js/sinon-1.5.2'
 	},
 
-	packages: ['packages/demo', 'packages/organization']
+	packages: ['packages/demo', 'packages/friends-demo']
 }

@@ -1,18 +1,17 @@
 define (require, exports, module)->
-	view = require './view'
-	model = require './model'
+	View = require './view'
+	Model = require './model'
 	BaseController = require 'shared/base_controller'
 
-	exports.Controller = class Controller extends BaseController
+	class Controller extends BaseController
 		routes:
 			'demo': 'demo'
 			'demo/:id': 'demo'
 
-		demo: ->
+		demo: (id=0) ->
 			console.log 'demo'
-			@currentView = new view.View(
-				model: new model.Model()
+			@currentView = new View(
+				model: new Model()
 			)
 			$('#demo-box').html @currentView.render().$el
-			return @
-	return
+			@

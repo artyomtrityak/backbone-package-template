@@ -1,7 +1,8 @@
 define (require, exports, module)->
 	tpl = require 'text!./templates/demo.html'
+	BaseView = require 'shared/base_view'
 
-	exports.View = class MyView extends Backbone.View
+	class MyView extends BaseView
 		template: _.template tpl
 
 		events: 
@@ -16,9 +17,8 @@ define (require, exports, module)->
 				data: 
 					username: 'Artyom'
 			)
-			return @
+			@
 
 		showNotification: ->
 			@$('#demoModal').modal 'show'
-			return @
-	return
+			@
