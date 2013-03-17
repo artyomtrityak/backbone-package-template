@@ -69,7 +69,7 @@ define (require, exports, module)->
 	model = require './model'
 	BaseController = require 'shared/base_controller'
 
-	exports.Controller = class Controller extends BaseController
+	class Controller extends BaseController
 		routes:
 			'demo': 'demo'
 			'demo/:id': 'demo'
@@ -80,7 +80,6 @@ define (require, exports, module)->
 			)
 			$('#demo-box').html @currentView.render().$el
 			return @
-	return
 ```
 
 What's happens here? We load `view.coffee` and `model.coffee` files from current package folder, load `base_controller.coffee` file from shared folder and create own package controller which extends from BaseCntroller. `routes` attr will be bind by `Backbone.Router.route` function.

@@ -3,7 +3,7 @@ define (require, exports, module) ->
 	# Packages loading	
 	# It's demo pachages, remove them
 	demoPackage = require 'packages/demo'
-	friendsPackage = require 'packages/friends-demo'
+	friendsPackage = require 'packages/list-view-demo'
 
 	#TODO: Unknown controller
 	
