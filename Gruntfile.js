@@ -1,5 +1,15 @@
 module.exports = function(grunt) {
 	grunt.initConfig({
+		connect: {
+			server: {
+				options: {
+					port: 8080,
+					base: './app',
+					hostname: null
+				}
+			}
+		},
+		
 		coffee: {
 			options: {
 				bare: true
@@ -58,25 +68,17 @@ module.exports = function(grunt) {
 					configFile: 'tests/testacular-config.js'
 				}
 			}
-		},
-		server: {
-			base: {
-				port:8080,
-				host: "localhost",
-				staticFolder:"./app"
-			}
 		}
 
 	});
 	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-coffee');
 	grunt.loadNpmTasks('grunt-testacular');
-	grunt.registerMultiTask('server', 'run Server', function(){
-		require("./server/server")(this.data, grunt);
-	});
+
 
 	// Setip tasks, wanch should be last
-	grunt.registerTask('run', [ 'coffee', 'server', 'testacular', 'watch']);
+	grunt.registerTask('run', [ 'coffee', 'connect', 'testacular', 'watch']);
 	grunt.registerTask('default', ['run']);
 };
