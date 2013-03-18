@@ -195,11 +195,12 @@ This is needed if you develop frontend without ready backend. Backend devs will 
 
 
 ## tests
-This is folder which contains your unit-tests
+This is folder which contains main unit-tests
 
 
 ### tests/spec
-`tests/spec` folder has same structure as app folder and contains unittests which 
+`tests/spec` folder has same structure as app folder and contains app unittests (but not packages unittests).
+Package unittests should be in package `spec` folder. 
 
 
 ### tests/testacular-config.coffee

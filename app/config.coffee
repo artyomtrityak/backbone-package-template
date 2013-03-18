@@ -31,7 +31,6 @@ require.config {
 		'text': 'assets/js/text',
 		'backbone': 'assets/js/backbone-0.9.10',
 		'underscore': 'assets/js/underscore-1.4.4',
-		'backbone.paginator': 'assets/js/backbone.paginator',
 		'jquery': 'assets/js/jquery-1.9.1',
 		'backbone.validation': 'assets/js/backbone.validation',
 		'bootstrap': 'assets/js/bootstrap',
