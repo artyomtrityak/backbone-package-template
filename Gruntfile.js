@@ -78,11 +78,17 @@ module.exports = function(grunt) {
 				],
 				tasks: ['coffee', 'livereload']
 			},
-			scss:{
+			scss: {
 				files: [
 					'app/assets/scss/*.scss'
 				],
 				tasks: ['sass', 'livereload']
+			},
+			html: {
+				files: [
+					'app/**/*.html'
+				],
+				tasks: ['livereload']
 			}
 		},
 
