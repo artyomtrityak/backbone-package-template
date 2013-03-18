@@ -1,3 +1,14 @@
+var path = require('path');
+var lrSnippet = require('grunt-contrib-livereload/lib/utils').livereloadSnippet;
+
+var folderMount = function folderMount(connect, point) {
+	return connect.static(path.resolve(point));
+};
+
+var folderDir = function folderDir(connect, point){
+	return connect.directory(path.resolve(point));
+}
+
 module.exports = function(grunt) {
 	grunt.initConfig({
 		connect: {
@@ -5,7 +16,13 @@ module.exports = function(grunt) {
 				options: {
 					port: 8080,
 					base: './app',
-					hostname: null
+					// livereload awesomeness
+					middleware: function(connect, options){
+						return [
+						lrSnippet, 
+						folderMount(connect, './app'), 
+						folderDir(connect, './app')];
+					}
 				}
 			}
 		},
@@ -50,16 +67,23 @@ module.exports = function(grunt) {
 			}
 		},
 
-		watch: {
-			files: [
-				'app/assets/scss/*.scss',
-				'app/*.coffee',
-				'app/**/*.coffee',
-				'tests/**/*.coffee',
-				'generators/**/*.coffee',
-				'server/*.coffee'
-			],
-			tasks: ['sass', 'coffee', 'server']
+		regarde: {
+			coffee: { 
+				files: [
+					'app/*.coffee',
+					'app/**/*.coffee',
+					'tests/**/*.coffee',
+					'generators/**/*.coffee',
+					'server/*.coffee'
+				],
+				tasks: ['coffee', 'livereload']
+			},
+			scss:{
+				files: [
+					'app/assets/scss/*.scss'
+				],
+				tasks: ['sass', 'livereload']
+			}
 		},
 
 		testacular: {
@@ -73,12 +97,12 @@ module.exports = function(grunt) {
 	});
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-connect');
-	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-regarde');
 	grunt.loadNpmTasks('grunt-contrib-coffee');
 	grunt.loadNpmTasks('grunt-testacular');
-
+	grunt.loadNpmTasks('grunt-contrib-livereload');
 
 	// Setip tasks, wanch should be last
-	grunt.registerTask('run', [ 'coffee', 'connect', 'testacular', 'watch']);
+	grunt.registerTask('run', [ 'coffee', 'connect', 'livereload-start', 'testacular', 'regarde']);
 	grunt.registerTask('default', ['run']);
 };
