@@ -5,7 +5,7 @@ define (require, exports, module) ->
 	demoPackage = require 'packages/demo'
 	friendsPackage = require 'packages/list-view-demo'
 
-	#TODO: Unknown controller
+	#TODO: Unknown package
 	
 	#Utils and other
 	Utils = require 'shared/utils'

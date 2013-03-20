@@ -7,7 +7,7 @@ var folderMount = function folderMount(connect, point) {
 
 var folderDir = function folderDir(connect, point){
 	return connect.directory(path.resolve(point));
-}
+};
 
 module.exports = function(grunt) {
 	grunt.initConfig({
@@ -19,14 +19,14 @@ module.exports = function(grunt) {
 					// livereload awesomeness
 					middleware: function(connect, options){
 						return [
-						lrSnippet, 
-						folderMount(connect, './app'), 
+						lrSnippet,
+						folderMount(connect, './app'),
 						folderDir(connect, './app')];
 					}
 				}
 			}
 		},
-		
+
 		coffee: {
 			options: {
 				bare: true
@@ -68,7 +68,7 @@ module.exports = function(grunt) {
 		},
 
 		regarde: {
-			coffee: { 
+			coffee: {
 				files: [
 					'app/*.coffee',
 					'app/**/*.coffee',

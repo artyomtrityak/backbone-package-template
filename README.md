@@ -207,7 +207,7 @@ Package unittests should be in package `spec` folder.
 It's config for test runner
 
 
-`note: when i write that it loads .coffee file i mean conpiled .js file`
+`note: when i write that it loads .coffee file i mean compiled .js file`
 
 
 
