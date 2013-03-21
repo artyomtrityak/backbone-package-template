@@ -19,7 +19,7 @@ The main idea of this structure that you don't need learn any new framework. You
 
 - It's tested. Project has unit-tests which covers it's functionality. Each master update is autotesting by Travis CI
 
-- It's configured. Auto-compication coffee, sass (scss), run unittests in terminal (in real browsers or phantomjs) on each file save. It's done. It's work. You don't need spend time for configuration. Just take and use.
+- It's configured. Auto-compilation coffee, sass (scss), run unittests in terminal (in real browsers or phantomjs) on each file save. It's done. It's work. You don't need spend time for configuration. Just take and use.
 
 - It's free and opensourse. If you have some idea how to improve this structure you can just make pull request. Issues can be created if you don't know how it will be better to solve problem and me or someone else will be able to help.
 
@@ -86,7 +86,7 @@ What's happens here? We load `view.coffee` and `model.coffee` files from current
 
 Files `view.coffee` and `model.coffee` is not required. You can create any files you need and load what you need. It's just example.
 
-Also controller 3 methods are colling during request (you can see how it was done in `shared/utils.coffee` file):
+Also 3 controller's methods are colling during request (you can see how it was done in `shared/utils.coffee` file):
 
 - `onBeforeRequest`
 
@@ -97,7 +97,7 @@ Also controller 3 methods are colling during request (you can see how it was don
 
 ### shared
 
-This folder contains global modules. Anything global you need should be placed here.
+This folder contains global modules. Anything you need to have globally available should be placed here.
 
 #### shared/app_state.coffee
 
@@ -187,7 +187,7 @@ Simple project start file.
 
 
 ### server.coffee
-It's sinon.js fake server which mocks `xhr` and allow us use any ajax requests without real ajax requests.
+It's [sinon.js](http://sinonjs.org/) fake server which mocks `xhr` and allow us use any ajax requests without real ajax requests.
 So we will make request with for example `model.fetch()` but response will be given from fake server without any real ajax.
 
 This is needed if you develop frontend without ready backend. Backend devs will give you json / xml which their server will respond and you will set it in `server.coffee`
