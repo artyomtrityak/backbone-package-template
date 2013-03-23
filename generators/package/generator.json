@@ -6,11 +6,11 @@
     },
     {
       "from": "package.coffee.hbs",
-      "to": "app/packages/{{name}}/model.coffee"
+      "to": "app/packages/{{name}}/models/model.coffee"
     },
     {
       "from": "package.coffee.hbs",
-      "to": "app/packages/{{name}}/view.coffee"
+      "to": "app/packages/{{name}}/views/view.coffee"
     },
     {
       "from": "package.coffee.hbs",
