@@ -9,13 +9,8 @@ describe 'Application test', ->
 			done()
 
 	it 'should exports correct app', (done) ->
-		expect(app).to.be.a 'object'
+		expect(app).to.be.a 'function'
 
-		expect(app.App).to.be.a 'function'
-
-		App = new app.App()
-		expect(App).to.have.property 'routes'
-		expect(App).to.have.property 'unknownRoute'
-		expect(App.unknownRoute).to.be.a 'function'
+		App = new app()
 		done()
 		

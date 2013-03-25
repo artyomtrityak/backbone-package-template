@@ -37,5 +37,5 @@ require.config {
 		'sinon': 'assets/js/sinon-1.5.2'
 	},
 
-	packages: ['packages/demo', 'packages/list-view-demo']
+	packages: ['packages/not-found', 'packages/demo', 'packages/list-view-demo']
 }

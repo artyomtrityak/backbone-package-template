@@ -1,4 +1,4 @@
 require ['app'], (Application)->
-	app = new Application.App()
+	app = new Application()
 
 	Backbone.history.start()

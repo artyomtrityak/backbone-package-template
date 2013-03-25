@@ -2,10 +2,9 @@ define (require, exports, module) ->
 	
 	# Packages loading	
 	# It's demo pachages, remove them
+	notFoundPackage = require 'packages/not-found'
 	demoPackage = require 'packages/demo'
-	friendsPackage = require 'packages/list-view-demo'
-
-	#TODO: Unknown package
+	listViewPackage = require 'packages/list-view-demo'
 	
 	#Utils and other
 	Utils = require 'shared/utils'
@@ -14,17 +13,11 @@ define (require, exports, module) ->
 		server = require 'server'
 		server.start()
 
-	exports.App = Backbone.Router.extend {
-		routes:
-			'*other': 'unknownRoute'
-
-		initialize: ->
+	class App extends Backbone.Router
+		constructor: ->
 			Utils.bindRoutes @, [
+				notFoundPackage
 				demoPackage
-				friendsPackage
+				listViewPackage
 			]
 
-		unknownRoute: ->
-			console.log 'unknown'
-	}
-	return
