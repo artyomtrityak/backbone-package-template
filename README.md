@@ -240,10 +240,3 @@ I recommend use __brunch__ for creating new project. Also it allows use Backbone
 
 - __node_modules/.bin/brunch generate package your_package_name__ for generating package and tests for it
 
-
-
-
-
-#TODO:
-
-- remove brunch and use single libs
